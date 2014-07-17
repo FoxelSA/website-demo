@@ -90,6 +90,7 @@ $pano = &$set->views[$panoIndex];
     <script type="text/javascript" src="../lib/freepano/js/touchHandler.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.toastmessage.js"></script>
+    <script type="text/javascript" src="js/jquery.easing-1.3.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/notify.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/three.js/three.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.js"></script>

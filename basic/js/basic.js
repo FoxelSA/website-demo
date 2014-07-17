@@ -54,14 +54,12 @@ $(document).ready(function() {
         var footerTargetHeight = $('footer .more').outerHeight(true) + $('footer .more').position().top;
 
         $('footer .shade').stop(true,false).animate({
-            height: footerTargetHeight,
-            easing: 'easeOutExpo'
-        },400);
+            height: footerTargetHeight
+        },400,'easeOutQuart');
 
         $('footer .main').stop(true,false).animate({
-            height: footerTargetHeight,
-            easing: 'easeOutExpo'
-        },400);
+            height: footerTargetHeight
+        },400,'easeOutQuart');
 
         $('footer .logo.attribution').stop(true,false).fadeOut(250);
         $('footer .caption').stop(true,false).fadeOut(250);
@@ -74,14 +72,12 @@ $(document).ready(function() {
     $('footer').on('mouseleave',function() {
 
         $('footer .shade').stop(true,false).animate({
-            height: footerStartHeight,
-            easing: 'easeOutExpo'
-        },400);
+            height: footerStartHeight
+        },400,'easeOutQuart');
 
         $('footer .main').stop(true,false).animate({
-            height: footerStartHeight,
-            easing: 'easeOutExpo'
-        },400);
+            height: footerStartHeight
+        },400,'easeOutQuart');
 
         $('footer .logo.attribution').stop(true,false).delay(250).fadeIn(250);
         $('footer .caption').stop(true,false).delay(250).fadeIn(250);
