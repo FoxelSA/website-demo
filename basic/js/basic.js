@@ -43,6 +43,53 @@
 
 $(document).ready(function() {
 
+    // footer
+    var footerStartHeight = $('footer .shade').height();
+
+    /**
+     * footer mouseenter
+     */
+    $('footer').on('mouseenter',function() {
+
+        var footerTargetHeight = $('footer .more').outerHeight(true) + $('footer .more').position().top;
+
+        $('footer .shade').stop(true,false).animate({
+            height: footerTargetHeight,
+            easing: 'easeOutExpo'
+        },400);
+
+        $('footer .main').stop(true,false).animate({
+            height: footerTargetHeight,
+            easing: 'easeOutExpo'
+        },400);
+
+        $('footer .logo.attribution').stop(true,false).fadeOut(250);
+        $('footer .caption').stop(true,false).fadeOut(250);
+
+    });
+
+    /**
+     * footer mouseleave
+     */
+    $('footer').on('mouseleave',function() {
+
+        $('footer .shade').stop(true,false).animate({
+            height: footerStartHeight,
+            easing: 'easeOutExpo'
+        },400);
+
+        $('footer .main').stop(true,false).animate({
+            height: footerStartHeight,
+            easing: 'easeOutExpo'
+        },400);
+
+        $('footer .logo.attribution').stop(true,false).delay(250).fadeIn(250);
+        $('footer .caption').stop(true,false).delay(250).fadeIn(250);
+
+    });
+
+    // freepano
+
     $('#pano').panorama({
 
         camera: {
@@ -63,8 +110,8 @@ $(document).ready(function() {
 
         sphere: {
             texture: {
-                dirName: '../lib/freepano/examples/result_1403179805_224762-0-25-1',
-                baseName: 'result_1403179805_224762-0-25-1',
+                dirName: 'tiles/'+tiles.path,
+                baseName: tiles.src,
                 columns: 16,
                 rows: 8
             }

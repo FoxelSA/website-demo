@@ -45,14 +45,44 @@
  *      Attribution" section of <http://foxel.ch/license>.
  */
 
+
+// request
+$s = isset($_GET['s']) ? trim(strtolower($_GET['s'])) : NULL;
+$p = isset($_GET['p']) ? (int)trim($_GET['p']) : 0;
+
+// read json
+$json = json_decode(file_get_contents('config.json'));
+$sets = &$json->config->sets;
+
+// init
+$setIndex = 0;
+$panoIndex = 0;
+
+// look for set
+if (!is_null($s)) {
+    foreach ($sets as $i => &$set) {
+        if ($set->path == $s) {
+            $setIndex = $i;
+            $panoIndex = $p;
+            if (!isset($set->views[$p]))
+                $panoIndex = 0;
+            break;
+        }
+    }
+}
+
+// panorama
+$set = &$sets[$setIndex];
+$pano = &$set->views[$panoIndex];
+
 ?>
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <title>FOXEL | Basic Demonstration // Montpellier, Port Marianne</title>
+    <title>FOXEL | Basic Demonstration // <?php print $set->name; ?>, <?php print $pano->caption; ?></title>
     <meta name="description" content="Expert in Stereophotogrammetry and 3D Environment Digitizing" />
     <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="http://foxel.ch/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/css/jquery.toastmessage.css" />
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/css/main.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/basic.css" />
@@ -63,6 +93,12 @@
     <script type="text/javascript" src="../lib/freepano/js/notify.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/three.js/three.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.js"></script>
+    <script type="text/javascript">
+        var tiles = {
+            path: '<?php print $set->path.'/'.$panoIndex; ?>',
+            src: '<?php print $pano->src; ?>'
+        };
+    </script>
     <script type="text/javascript" src="js/basic.js"></script>
 </head>
 
@@ -74,11 +110,25 @@
     <div class="shade"></div>
     <div class="main">
         <div class="caption">
-            <div>Basic Demonstration</div>
-            <div>Montpellier, Port Marianne</div>
+            <div><?php print $set->name; ?></div>
+            <div><?php print $pano->caption; ?></div>
         </div>
-        <div class="logo">
+        <div class="logo attribution">
             <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
+        </div>
+        <div class="more">
+            <div class="wrap">
+                <div class="col logo">
+                    <a href="http://foxel.ch/" target="_blank"><img src="img/foxel.png" alt="FOXEL" width="360" height="60" /></a>
+                </div>
+                <div class="col text">
+                    <div class="title">Expert in Stereophotogrammetry<br />and 3D Environment Digitizing</div>
+                    <p>Our mission is to develop technological solutions dedicated to 3D environment digitizing using technologies based on the CERN OHL license and other GNU GPL compatible licenses.</p>
+                    <p>Our model and general approach predominantly strives for our Clients to reappropriate control of their data and further, their numeric territory.</p>
+                    <p>Read more on <a href="http://foxel.ch/" target="_blank">http://foxel.ch</a></p>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
         </div>
     </div>
 </footer>

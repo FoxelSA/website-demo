@@ -1,0 +1,34 @@
+{
+    "config": {
+        "sets": [
+            {
+                "name": "Montpellier",
+                "path": "montpellier",
+                "views": [
+                    {
+                        "caption": "Port Marianne",
+                        "src": "result_1403179670_724762-0-25-1"
+                    },
+                    {
+                        "caption": "Place Ernest Granier",
+                        "src": "result_1403179643_724762-0-25-1"
+                    }
+                ]
+            },
+            {
+                "name": "RMLL 2014",
+                "path": "rmll2014",
+                "views": [
+                    {
+                        "caption": "Université Montpellier 2, with Richard M. Stallman",
+                        "src": "undefined"
+                    },
+                    {
+                        "caption": "Esplanade Charles-de-Gaulle",
+                        "src": "undefined"
+                    }
+                ]
+            }
+        ]
+    }
+}
