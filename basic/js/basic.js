@@ -43,6 +43,55 @@
 
 $(document).ready(function() {
 
+    // nav
+    var navStartHeight = 0;
+
+    /**
+     * nav mouseenter
+     */
+    $('#nav').on('mouseenter',function() {
+
+        var navTargetHeight = $('#nav .main').outerHeight(true);
+
+        $('#nav .shade').stop(true,false).animate({
+            height: navTargetHeight,
+            opacity: 0.85
+        },400,'easeOutQuart');
+
+        $('#nav .tab').stop(true,false).animate({
+            top: navTargetHeight
+        },400,'easeOutQuart');
+
+        $('#nav .main').stop(true,false).animate({
+            bottom: -navTargetHeight
+        },400,'easeOutQuart');
+
+        $('#nav .tab .lay').stop(true,false).fadeTo(400,0.85);
+
+    });
+
+    /**
+     * nav mouseleave
+     */
+    $('#nav').on('mouseleave',function() {
+
+        $('#nav .shade').stop(true,false).animate({
+            height: navStartHeight,
+            opacity: 0.5
+        },400,'easeOutQuart');
+
+        $('#nav .tab').stop(true,false).animate({
+            top: navStartHeight
+        },400,'easeOutQuart');
+
+        $('#nav .main').stop(true,false).animate({
+            bottom: navStartHeight
+        },400,'easeOutQuart');
+
+        $('#nav .tab .lay').stop(true,false).fadeTo(400,0.5);
+
+    });
+
     // footer
     var footerStartHeight = $('footer .shade').height();
 

@@ -107,6 +107,26 @@ $pano = &$set->views[$panoIndex];
 
 <div id="pano" class="freepano"></div>
 
+<div id="nav">
+    <div class="shade"></div>
+    <div class="tab">
+        <div class="lay"></div>
+        <div>Navigation</div>
+    </div>
+    <div class="main">
+        <div class="scrollable">
+        <?php foreach ($sets as &$dataset): ?>
+            <div class="dataset">
+                <div class="set"><?php print $dataset->name; ?></div>
+            <?php foreach ($dataset->views as $iv => &$view): ?>
+                <div class="pano"><a href="./?s=<?php print $dataset->path; ?>&p=<?php print $iv; ?>"><img src="tiles/<?php print $dataset->path.'/'.$iv; ?>/preview.png" alt="<?php print $dataset->name; ?>, <?php print $view->caption; ?>" title="<?php print $dataset->name; ?>, <?php print $view->caption; ?>" /></a></div>
+            <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
 <footer>
     <div class="shade"></div>
     <div class="main">
