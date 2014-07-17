@@ -114,6 +114,9 @@ $pano = &$set->views[$panoIndex];
             <div><?php print $set->name; ?></div>
             <div><?php print $pano->caption; ?></div>
         </div>
+        <div class="scroll">
+            <img src="img/scroll.png" alt="" width="18" />
+        </div>
         <div class="logo attribution">
             <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
         </div>

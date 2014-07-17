@@ -61,6 +61,7 @@ $(document).ready(function() {
             height: footerTargetHeight
         },400,'easeOutQuart');
 
+        $('footer .scroll').stop(true,false).fadeOut(250);
         $('footer .logo.attribution').stop(true,false).fadeOut(250);
         $('footer .caption').stop(true,false).fadeOut(250);
 
@@ -79,10 +80,37 @@ $(document).ready(function() {
             height: footerStartHeight
         },400,'easeOutQuart');
 
+        $('footer .scroll').stop(true,false).delay(500).fadeIn(250);
         $('footer .logo.attribution').stop(true,false).delay(250).fadeIn(250);
         $('footer .caption').stop(true,false).delay(250).fadeIn(250);
 
     });
+
+    /**
+     * arrow move
+     */
+    var _arrow = function() {
+
+        $('footer .scroll > img')
+            .delay(1000)
+            .animate({
+                    marginTop: '+=5',
+                },250,'swing')
+            .animate({
+                    marginTop: '-=5',
+                    opacity: 0.75
+                }, {
+                    duration: 250,
+                    complete: function() {
+                        _arrow();
+                    },
+                    easing: 'swing'
+                });
+
+    };
+
+    // arrow
+    _arrow();
 
     // freepano
 
