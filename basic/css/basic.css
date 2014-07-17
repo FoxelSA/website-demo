@@ -159,17 +159,19 @@ footer .more {
 
         #nav .pano img {
             height:50px;
-            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
-            filter:alpha(opacity=85);
-            -moz-opacity:0.85;
-            -khtml-opacity:0.85;
-            opacity:0.85;
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+            filter:alpha(opacity=70);
+            -moz-opacity:0.7;
+            -khtml-opacity:0.7;
+            opacity:0.7;
+            border:solid 1px #000;
         }
 
-            #nav .pano img:hover {
+            #nav .pano img:hover, #nav .pano img.active {
                 -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
                 filter:alpha(opacity=100);
                 -moz-opacity:1;
                 -khtml-opacity:1;
                 opacity:1;
+                border:solid 1px #ecb100;
             }
