@@ -38,6 +38,8 @@
 
 $(document).ready(function() {
 
+    var panorama;
+
     /**
      * init nav scrollbar
      */
@@ -58,6 +60,15 @@ $(document).ready(function() {
         });
     };
 
+    /**
+     * panorama currently moving
+     */
+    var _isPanoMoving = function() {
+        if (panorama == null)
+            return false;
+        return !(panorama.mode.mousedown=='undefined' || !panorama.mode.mousedown);
+    };
+
     // nav scrollbar
     _scrollbar();
 
@@ -68,6 +79,9 @@ $(document).ready(function() {
      * nav mouseenter
      */
     $('#nav').on('mouseenter',function() {
+
+        if (_isPanoMoving())
+            return;
 
         var navTargetHeight = $('#nav .main').outerHeight(true);
 
@@ -117,6 +131,9 @@ $(document).ready(function() {
      * footer mouseenter
      */
     $('footer').on('mouseenter',function() {
+
+        if (_isPanoMoving())
+            return;
 
         var footerTargetHeight = $('footer .more').outerHeight(true) + $('footer .more').position().top;
 
@@ -210,6 +227,6 @@ $(document).ready(function() {
     });
 
     // init!
-    var panorama = $('#pano').data('pano');
+    panorama = $('#pano').data('pano');
 
 });
