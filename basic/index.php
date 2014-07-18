@@ -14,11 +14,6 @@
  *      Alexandre Kraft <a.kraft@foxel.ch>
  *
  *
- * Contributor(s):
- *
- *      Luc Deschenaux <l.deschenaux@foxel.ch>
- *
- *
  * This file is part of the FOXEL project <http://foxel.ch>.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -84,6 +79,7 @@ $pano = &$set->views[$panoIndex];
     <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/css/jquery.toastmessage.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar.css" />
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/css/main.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/basic.css" />
     <script type="text/javascript" src="../lib/freepano/js/jquery-2.1.0.js"></script>
@@ -91,6 +87,7 @@ $pano = &$set->views[$panoIndex];
     <script type="text/javascript" src="../lib/freepano/js/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.toastmessage.js"></script>
     <script type="text/javascript" src="js/jquery.easing-1.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar-3.0.2.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/notify.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/three.js/three.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.js"></script>
@@ -111,18 +108,21 @@ $pano = &$set->views[$panoIndex];
     <div class="shade"></div>
     <div class="tab">
         <div class="lay"></div>
-        <div>Navigation</div>
+        <div>More Demos</div>
     </div>
     <div class="main">
         <div class="scrollable">
-        <?php foreach ($sets as $id => &$dataset): ?>
-            <div class="dataset">
-                <div class="set"><?php print $dataset->name; ?></div>
-            <?php foreach ($dataset->views as $iv => &$view): ?>
-                <div class="pano"><a href="./?s=<?php print $dataset->path; ?>&p=<?php print $iv; ?>"><img <?php if ($id==$setIndex && $iv==$panoIndex) print('class="active"'); ?> src="tiles/<?php print $dataset->path.'/'.$iv; ?>/preview.png" alt="<?php print $dataset->name; ?>, <?php print $view->caption; ?>" title="<?php print $dataset->name; ?>, <?php print $view->caption; ?>" /></a></div>
+            <div class="area">
+            <?php foreach ($sets as $id => &$dataset): ?>
+                <div class="dataset">
+                    <div class="set"><?php print $dataset->name; ?></div>
+                <?php foreach ($dataset->views as $iv => &$view): ?>
+                    <div class="pano"><a href="./?s=<?php print $dataset->path; ?>&p=<?php print $iv; ?>"><img <?php if ($id==$setIndex && $iv==$panoIndex) print('class="active"'); ?> src="tiles/<?php print $dataset->path.'/'.$iv; ?>/preview.png" alt="<?php print $dataset->name; ?>, <?php print $view->caption; ?>" title="<?php print $dataset->name; ?>, <?php print $view->caption; ?>" /></a></div>
+                <?php endforeach; ?>
+                </div>
             <?php endforeach; ?>
+                <div style="clear:both;"></div>
             </div>
-        <?php endforeach; ?>
         </div>
     </div>
 </div>

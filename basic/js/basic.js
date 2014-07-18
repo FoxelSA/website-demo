@@ -10,11 +10,6 @@
  *      Alexandre Kraft <a.kraft@foxel.ch>
  *
  *
- * Contributor(s):
- *
- *      Luc Deschenaux <l.deschenaux@foxel.ch>
- *
- *
  * This file is part of the FOXEL project <http://foxel.ch>.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -42,6 +37,29 @@
  */
 
 $(document).ready(function() {
+
+    /**
+     * init nav scrollbar
+     */
+    var _scrollbar = function() {
+
+        var _w = 0;
+        $.each($('#nav .dataset'),function(index,el) {
+            _w += $(el).outerWidth(true);
+        });
+        $('#nav .area').width(_w);
+
+        $('#nav .scrollable').mCustomScrollbar({
+            axis: 'x',
+            theme: 'light-thin',
+            advanced: {
+                updateOnContentResize: true
+            }
+        });
+    };
+
+    // nav scrollbar
+    _scrollbar();
 
     // nav
     var navStartHeight = 0;
@@ -162,7 +180,6 @@ $(document).ready(function() {
     _arrow();
 
     // freepano
-
     $('#pano').panorama({
 
         camera: {
@@ -192,6 +209,7 @@ $(document).ready(function() {
 
     });
 
+    // init!
     var panorama = $('#pano').data('pano');
 
 });

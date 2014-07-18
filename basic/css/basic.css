@@ -138,24 +138,36 @@ footer .more {
         text-align:center;
     }
 
+#nav .scrollable .area {
+    padding-right:15px;
+}
+
+    #nav .scrollable .mCSB_horizontal.mCSB_inside > .mCSB_container {
+        margin-bottom:15px;
+    }
+
 #nav .dataset, #nav .pano {
-    display:inline-block;
+    float:left;
 }
 
 #nav .dataset {
-    padding:15px 10px;
+    padding:15px 20px;
+    padding-right:0;
 }
 
     #nav .dataset .set {
         position:relative;
-        left:4px;
         font-size:13px;
     }
 
     #nav .pano {
-        padding-left:5px;
+        padding-right:5px;
         height:50px;
     }
+
+        #nav .pano:first-child {
+            padding-left:5px;
+        }
 
         #nav .pano img {
             height:50px;
@@ -175,3 +187,10 @@ footer .more {
                 opacity:1;
                 border:solid 1px #ecb100;
             }
+
+
+@media only screen and (max-width: 700px) {
+    footer .scroll {
+        display:none;
+    }
+}
