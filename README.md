@@ -1,7 +1,9 @@
 
 ## Demo Website of FOXEL SA, Geneva Switzerland
 
-WebGL panorama viewer based on [freepano](https://github.com/FoxelSA/freepano).
+Basic demo website of the FOXEL project, including a WebGL panorama viewer based
+on [freepano](https://github.com/FoxelSA/freepano) and [other
+dependencies](COPYRIGHT.md).
 
 
 ### Copyright
