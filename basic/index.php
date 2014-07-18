@@ -92,9 +92,10 @@ $pano = &$set->views[$panoIndex];
     <script type="text/javascript" src="../lib/freepano/js/three.js/three.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.js"></script>
     <script type="text/javascript">
-        var tiles = {
+        var cfg = {
             path: '<?php print $set->path.'/'.$panoIndex; ?>',
-            src: '<?php print $pano->src; ?>'
+            src: '<?php print $pano->src; ?>',
+            override: <?php if (isset($pano->override)) print json_encode($pano->override); else print '{}'; ?>
         };
     </script>
     <script type="text/javascript" src="js/basic.js"></script>

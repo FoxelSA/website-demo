@@ -11,7 +11,10 @@
                     },
                     {
                         "caption": "Place Ernest Granier",
-                        "src": "result_1403179643_724762-0-25-1"
+                        "src": "result_1403179643_724762-0-25-1",
+                        "override": {
+                            "lon": 25
+                        }
                     }
                 ]
             },
@@ -21,11 +24,29 @@
                 "views": [
                     {
                         "caption": "Université Montpellier 2, with Richard M. Stallman",
-                        "src": "result_1404826948_573218-0-25-1"
+                        "src": "result_1404826948_573218-0-25-1",
+                        "override": {
+                            "lon": 50,
+                            "lat": -8,
+                            "limits": {
+                                "lat": {
+                                    "min": -35
+                                }
+                            }
+                        }
                     },
                     {
                         "caption": "Esplanade Charles-de-Gaulle",
-                        "src": "result_1404655303_920436-0-25-1"
+                        "src": "result_1404655303_920436-0-25-1",
+                        "override": {
+                            "lon": 80,
+                            "lat": -10,
+                            "limits": {
+                                "lat": {
+                                    "min": -35
+                                }
+                            }
+                        }
                     }
                 ]
             }

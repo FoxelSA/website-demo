@@ -196,8 +196,10 @@ $(document).ready(function() {
     // arrow
     _arrow();
 
-    // freepano
-    $('#pano').panorama({
+    // options
+    var options = {
+
+        lon: 180,
 
         camera: {
             zoom: {
@@ -217,16 +219,20 @@ $(document).ready(function() {
 
         sphere: {
             texture: {
-                dirName: 'tiles/'+tiles.path,
-                baseName: tiles.src,
+                dirName: 'tiles/'+cfg.path,
+                baseName: cfg.src,
                 columns: 16,
                 rows: 8
             }
         }
 
-    });
+    };
 
-    // init!
+    // override options
+    $.extend(options,cfg.override);
+
+    // freepano
+    $('#pano').panorama(options);
     panorama = $('#pano').data('pano');
 
 });
