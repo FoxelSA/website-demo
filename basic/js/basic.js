@@ -47,7 +47,7 @@ $(document).ready(function() {
         $.each($('#nav .dataset'),function(index,el) {
             _w += $(el).outerWidth(true);
         });
-        $('#nav .area').width(_w);
+        $('#nav .area').width(_w+10);
 
         $('#nav .scrollable').mCustomScrollbar({
             axis: 'x',
