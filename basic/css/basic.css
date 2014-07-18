@@ -160,6 +160,10 @@ footer .more {
         font-size:13px;
     }
 
+        #nav .dataset .set.active {
+            color:#ecb100;
+        }
+
     #nav .pano {
         padding-right:5px;
         height:50px;
@@ -171,11 +175,11 @@ footer .more {
 
         #nav .pano img {
             height:50px;
-            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-            filter:alpha(opacity=70);
-            -moz-opacity:0.7;
-            -khtml-opacity:0.7;
-            opacity:0.7;
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+            filter:alpha(opacity=80);
+            -moz-opacity:0.8;
+            -khtml-opacity:0.8;
+            opacity:0.8;
             border:solid 1px #000;
         }
 
