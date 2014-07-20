@@ -50,25 +50,24 @@ $json = json_decode(file_get_contents('config.json'));
 $sets = &$json->config->sets;
 
 // init
-$setIndex = 0;
-$panoIndex = 0;
+$set = NULL;
+$pano = NULL;
 
-// look for set
-if (!is_null($s)) {
-    foreach ($sets as $i => &$set) {
-        if ($set->path == $s) {
-            $setIndex = $i;
-            $panoIndex = $p;
-            if (!isset($set->views[$p]))
-                $panoIndex = 0;
-            break;
-        }
+// parse
+foreach ($sets as &$_set) {
+    // default order
+    foreach ($_set->views as $v => &$_view) {
+        $_view->pid = $v;
+        if (!isset($_view->order))
+            $_view->order = 0;
+    }
+    // set found
+    if ($_set->path == $s) {
+        $set = $_set;
+        if (isset($_set->views[$p]))
+            $pano = $_set->views[$p];
     }
 }
-
-// panorama
-$set = &$sets[$setIndex];
-$pano = &$set->views[$panoIndex];
 
 ?>
 <head>
@@ -93,7 +92,7 @@ $pano = &$set->views[$panoIndex];
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.js"></script>
     <script type="text/javascript">
         var cfg = {
-            path: '<?php print $set->path.'/'.$panoIndex; ?>',
+            path: '<?php print $set->path.'/'.$pano->pid; ?>',
             src: '<?php print $pano->src; ?>',
             override: <?php if (isset($pano->override)) print json_encode($pano->override); else print '{}'; ?>
         };
@@ -114,11 +113,25 @@ $pano = &$set->views[$panoIndex];
     <div class="main">
         <div class="scrollable">
             <div class="area">
-            <?php foreach ($sets as $id => &$dataset): ?>
+            <?php
+                // sets
+                foreach ($sets as &$_set):
+                    $_as = $_set->path == $set->path;
+                    // ordering
+                    usort($_set->views,function($a,$b) {
+                        if ($a->order == $b->order)
+                            return ($a->pid < $b->pid) ? -1 : 1;
+                        return ($a->order < $b->order) ? -1 : 1;
+                    });
+            ?>
                 <div class="dataset">
-                    <div class="set <?php if ($id==$setIndex) print('active'); ?>"><?php print $dataset->name; ?></div>
-                <?php foreach ($dataset->views as $iv => &$view): ?>
-                    <div class="pano"><a href="./?s=<?php print $dataset->path; ?>&p=<?php print $iv; ?>"><img <?php if ($id==$setIndex && $iv==$panoIndex) print('class="active"'); ?> src="tiles/<?php print $dataset->path.'/'.$iv; ?>/preview.png" alt="<?php print $dataset->name; ?>, <?php print $view->caption; ?>" title="<?php print $dataset->name; ?>, <?php print $view->caption; ?>" /></a></div>
+                    <div class="set <?php if ($_as) print('active'); ?>"><?php print $_set->name; ?></div>
+                <?php
+                    // views
+                    foreach ($_set->views as &$_view):
+                        $_av = $_view->pid == $pano->pid;
+                ?>
+                    <div class="pano"><a href="./?s=<?php print $_set->path; ?>&p=<?php print $_view->pid; ?>"><img <?php if ($_as && $_av) print('class="active"'); ?> src="tiles/<?php print $_set->path.'/'.$_view->pid; ?>/preview.png" alt="<?php print $_set->name; ?>, <?php print $_view->caption; ?>" title="<?php print $_set->name; ?>, <?php print $_view->caption; ?>" /></a></div>
                 <?php endforeach; ?>
                 </div>
             <?php endforeach; ?>
