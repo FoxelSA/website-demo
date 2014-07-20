@@ -69,11 +69,14 @@ foreach ($sets as &$_set) {
     }
 }
 
+// existence
+$exists = (!is_null($set) && !is_null($pano));
+
 ?>
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <title>FOXEL | Basic Demonstration // <?php print $set->name; ?>, <?php print $pano->caption; ?></title>
+    <title>FOXEL | Basic Demonstration<?php if ($exists) print ' // '.$set->name.', '.$pano->caption; ?></title>
     <meta name="description" content="Expert in Stereophotogrammetry and 3D Environment Digitizing" />
     <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
@@ -94,7 +97,7 @@ foreach ($sets as &$_set) {
         var cfg = {
             path: '<?php print $set->path.'/'.$pano->pid; ?>',
             src: '<?php print $pano->src; ?>',
-            override: <?php if (isset($pano->override)) print json_encode($pano->override); else print '{}'; ?>
+            override: <?php print (isset($pano->override) ? json_encode($pano->override) : '{}'); ?>
         };
     </script>
     <script type="text/javascript" src="js/basic.js"></script>
@@ -102,7 +105,11 @@ foreach ($sets as &$_set) {
 
 <body>
 
-<div id="pano" class="freepano"></div>
+<?php if ($exists): ?>
+    <div id="pano" class="freepano"></div>
+<?php else: ?>
+    <div id="pnf">Panorama Not Found</div>
+<?php endif; ?>
 
 <div id="nav">
     <div class="shade"></div>
@@ -131,7 +138,7 @@ foreach ($sets as &$_set) {
                     foreach ($_set->views as &$_view):
                         $_av = $_view->pid == $pano->pid;
                 ?>
-                    <div class="pano"><a href="./?s=<?php print $_set->path; ?>&p=<?php print $_view->pid; ?>"><img <?php if ($_as && $_av) print('class="active"'); ?> src="tiles/<?php print $_set->path.'/'.$_view->pid; ?>/preview.png" alt="<?php print $_set->name; ?>, <?php print $_view->caption; ?>" title="<?php print $_set->name; ?>, <?php print $_view->caption; ?>" /></a></div>
+                    <div class="pano"><a href="./?s=<?php print $_set->path; ?>&p=<?php print $_view->pid; ?>"><img <?php if ($_as && $_av) print('class="active"'); ?> src="tiles/<?php print $_set->path.'/'.$_view->pid; ?>/preview.png" alt="<?php print $_set->name.', '.$_view->caption; ?>" title="<?php print $_set->name.', '.$_view->caption; ?>" /></a></div>
                 <?php endforeach; ?>
                 </div>
             <?php endforeach; ?>
@@ -141,7 +148,7 @@ foreach ($sets as &$_set) {
     </div>
 </div>
 
-<footer>
+<footer class="<?php if (!$exists) print('inactive'); ?>">
     <div class="shade"></div>
     <div class="main">
         <div class="caption">

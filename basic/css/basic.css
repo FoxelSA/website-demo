@@ -54,6 +54,10 @@ footer .scroll {
     left:50%;
 }
 
+    footer.inactive .scroll {
+        display:none;
+    }
+
     footer .scroll > img {
         position:absolute;
         top:0;
@@ -192,6 +196,11 @@ footer .more {
                 border:solid 1px #ecb100;
             }
 
+#pnf {
+    margin-top:200px;
+    color:#f00;
+    text-align:center;
+}
 
 @media only screen and (max-width: 700px) {
     footer .scroll {

@@ -107,6 +107,9 @@ $(document).ready(function() {
      */
     $('#nav').on('mouseleave',function() {
 
+        if (_isPanoMoving())
+            return;
+
         $('#nav .shade').stop(true,false).animate({
             height: navStartHeight,
             opacity: 0.5
@@ -132,7 +135,7 @@ $(document).ready(function() {
      */
     $('footer').on('mouseenter',function() {
 
-        if (_isPanoMoving())
+        if ($(this).hasClass('inactive') || _isPanoMoving())
             return;
 
         var footerTargetHeight = $('footer .more').outerHeight(true) + $('footer .more').position().top;
@@ -155,6 +158,9 @@ $(document).ready(function() {
      * footer mouseleave
      */
     $('footer').on('mouseleave',function() {
+
+        if ($(this).hasClass('inactive') || _isPanoMoving())
+            return;
 
         $('footer .shade').stop(true,false).animate({
             height: footerStartHeight
