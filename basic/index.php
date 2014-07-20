@@ -72,6 +72,13 @@ foreach ($sets as &$_set) {
 // existence
 $exists = (!is_null($set) && !is_null($pano));
 
+// default
+if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
+    $exists = true;
+    $set = $sets[0];
+    $pano = $set->views[0];
+}
+
 ?>
 <head>
     <meta charset="UTF-8" />
