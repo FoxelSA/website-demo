@@ -15,6 +15,17 @@
                         "override": {
                             "lon": 25
                         }
+                    },
+                    {
+                        "caption": "Monument aux morts « Aux soldats de l'ombre »",
+                        "src": "result_1404644424_925651-0-25-1",
+                        "override": {
+                            "lon": 200,
+                            "rotation": {
+                                "tilt": 5,
+                                "roll": 5
+                            }
+                        }
                     }
                 ]
             },
