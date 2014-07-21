@@ -114,78 +114,82 @@ if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
 
 <body>
 
-<?php if ($exists): ?>
-    <div id="pano" class="freepano"></div>
-<?php else: ?>
-    <div id="pnf">Panorama Not Found</div>
-<?php endif; ?>
+<div id="wrapper">
 
-<div id="nav">
-    <div class="shade"></div>
-    <div class="tab">
-        <div class="lay"></div>
-        <div>More Demos</div>
-    </div>
-    <div class="main">
-        <div class="scrollable">
-            <div class="area">
-            <?php
-                // sets
-                foreach ($sets as &$_set):
-                    $_as = $_set->path == $set->path;
-                    // ordering
-                    usort($_set->views,function($a,$b) {
-                        if ($a->order == $b->order)
-                            return ($a->pid < $b->pid) ? -1 : 1;
-                        return ($a->order < $b->order) ? -1 : 1;
-                    });
-            ?>
-                <div class="dataset">
-                    <div class="set <?php if ($_as) print('active'); ?>"><?php print $_set->name; ?></div>
+    <?php if ($exists): ?>
+        <div id="pano" class="freepano"></div>
+    <?php else: ?>
+        <div id="pnf">Panorama Not Found</div>
+    <?php endif; ?>
+
+    <div id="nav">
+        <div class="shade"></div>
+        <div class="tab">
+            <div class="lay"></div>
+            <div>More Demos</div>
+        </div>
+        <div class="main">
+            <div class="scrollable">
+                <div class="area">
                 <?php
-                    // views
-                    foreach ($_set->views as &$_view):
-                        $_av = $_view->pid == $pano->pid;
+                    // sets
+                    foreach ($sets as &$_set):
+                        $_as = $_set->path == $set->path;
+                        // ordering
+                        usort($_set->views,function($a,$b) {
+                            if ($a->order == $b->order)
+                                return ($a->pid < $b->pid) ? -1 : 1;
+                            return ($a->order < $b->order) ? -1 : 1;
+                        });
                 ?>
-                    <div class="pano"><a href="./?s=<?php print $_set->path; ?>&p=<?php print $_view->pid; ?>"><img <?php if ($_as && $_av) print('class="active"'); ?> src="tiles/<?php print $_set->path.'/'.$_view->pid; ?>/preview.png" alt="<?php print $_set->name.', '.$_view->caption; ?>" title="<?php print $_set->name.', '.$_view->caption; ?>" /></a></div>
+                    <div class="dataset">
+                        <div class="set <?php if ($_as) print('active'); ?>"><?php print $_set->name; ?></div>
+                    <?php
+                        // views
+                        foreach ($_set->views as &$_view):
+                            $_av = $_view->pid == $pano->pid;
+                    ?>
+                        <div class="pano"><a href="./?s=<?php print $_set->path; ?>&p=<?php print $_view->pid; ?>"><img <?php if ($_as && $_av) print('class="active"'); ?> src="tiles/<?php print $_set->path.'/'.$_view->pid; ?>/preview.png" alt="<?php print $_set->name.', '.$_view->caption; ?>" title="<?php print $_set->name.', '.$_view->caption; ?>" /></a></div>
+                    <?php endforeach; ?>
+                    </div>
                 <?php endforeach; ?>
+                    <div style="clear:both;"></div>
                 </div>
-            <?php endforeach; ?>
-                <div style="clear:both;"></div>
             </div>
         </div>
     </div>
-</div>
 
-<footer class="<?php if (!$exists) print('inactive'); ?>">
-    <div class="shade"></div>
-    <div class="main">
-        <div class="caption">
-            <div><?php print $set->name; ?></div>
-            <div><?php print $pano->caption; ?></div>
-        </div>
-        <div class="scroll">
-            <img src="img/scroll.png" alt="" width="18" />
-        </div>
-        <div class="logo attribution">
-            <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
-        </div>
-        <div class="more">
-            <div class="wrap">
-                <div class="col logo">
-                    <a href="http://foxel.ch/" target="_blank"><img src="img/foxel.png" alt="FOXEL" width="360" height="60" /></a>
+    <footer class="<?php if (!$exists) print('inactive'); ?>">
+        <div class="shade"></div>
+        <div class="main">
+            <div class="caption">
+                <div><?php print $set->name; ?></div>
+                <div><?php print $pano->caption; ?></div>
+            </div>
+            <div class="scroll">
+                <img src="img/scroll.png" alt="" width="18" />
+            </div>
+            <div class="logo attribution">
+                <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
+            </div>
+            <div class="more">
+                <div class="wrap">
+                    <div class="col logo">
+                        <a href="http://foxel.ch/" target="_blank"><img src="img/foxel.png" alt="FOXEL" width="360" height="60" /></a>
+                    </div>
+                    <div class="col text">
+                        <div class="title">Expert in Stereophotogrammetry<br />and 3D Environment Digitizing</div>
+                        <p>Our mission is to develop technological solutions dedicated to 3D environment digitizing using technologies based on the CERN OHL license and other GNU GPL compatible licenses.</p>
+                        <p>Our model and general approach predominantly strives for our Clients to reappropriate control of their data and further, their numeric territory.</p>
+                        <p>Read more on <a href="http://foxel.ch/" target="_blank">http://foxel.ch</a></p>
+                    </div>
+                    <div style="clear:both;"></div>
                 </div>
-                <div class="col text">
-                    <div class="title">Expert in Stereophotogrammetry<br />and 3D Environment Digitizing</div>
-                    <p>Our mission is to develop technological solutions dedicated to 3D environment digitizing using technologies based on the CERN OHL license and other GNU GPL compatible licenses.</p>
-                    <p>Our model and general approach predominantly strives for our Clients to reappropriate control of their data and further, their numeric territory.</p>
-                    <p>Read more on <a href="http://foxel.ch/" target="_blank">http://foxel.ch</a></p>
-                </div>
-                <div style="clear:both;"></div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+
+</div>
 
 </body>
 </html>

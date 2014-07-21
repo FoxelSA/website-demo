@@ -41,6 +41,26 @@ $(document).ready(function() {
     var panorama;
 
     /**
+     * layout
+     */
+    var _layout = function() {
+
+        $('#wrapper').width($(window).width());
+        $('#wrapper').height($(window).height());
+
+        if ($(window).width() <= 700)
+            $('footer').addClass('smalldevice');
+        else
+            $('footer').removeClass('smalldevice');
+    };
+
+    // layout
+    _layout();
+    $(window).on('resize', function(e) {
+        _layout();
+    });
+
+    /**
      * init nav scrollbar
      */
     var _scrollbar = function() {
@@ -135,7 +155,7 @@ $(document).ready(function() {
      */
     $('footer').on('mouseenter',function() {
 
-        if ($(this).hasClass('inactive') || _isPanoMoving())
+        if ($(this).hasClass('inactive') || $(this).hasClass('smalldevice') || _isPanoMoving())
             return;
 
         var footerTargetHeight = $('footer .more').outerHeight(true) + $('footer .more').position().top;
@@ -159,7 +179,7 @@ $(document).ready(function() {
      */
     $('footer').on('mouseleave',function() {
 
-        if ($(this).hasClass('inactive') || _isPanoMoving())
+        if ($(this).hasClass('inactive') || $(this).hasClass('smalldevice') || _isPanoMoving())
             return;
 
         $('footer .shade').stop(true,false).animate({
