@@ -37,11 +37,6 @@ This program includes works distributed under the terms of the GNU General
 Public License and/or a compatible license and other copyright notices.
 
 
-*   __jQuery Easing 1.3__<br />
-    <[http://gsgd.co.uk/sandbox/jquery/easing/](http://gsgd.co.uk/sandbox/jquery/easing/)><br />
-    Copyright (c) 2008 George McGinley Smith<br />
-    jQuery Easing is licensed under the [BSD 3-Clause license](http://opensource.org/licenses/BSD-3-Clause).
-
 *   __Malihu jQuery Custom Scrollbar Plugin 3.0.2__<br />
     <[http://manos.malihu.gr/jquery-custom-content-scroller/](http://manos.malihu.gr/jquery-custom-content-scroller/)><br />
     Copyright (c) 2014 Manos Malihutsakis, http://manos.malihu.gr<br />
