@@ -65,6 +65,33 @@
                         }
                     }
                 ]
+            },
+            {
+                "name": "Acid'Days 2014",
+                "path": "aciddays2014",
+                "views": [
+                    {
+                        "caption": "Motorcycling in Switzerland (onboard)",
+                        "src": "result_1399212243_133600-0-25-1",
+                        "override": {
+                            "lon": 150,
+                            "rotation": {
+                                "tilt": 10,
+                                "roll": 10
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Motorcycling in Switzerland (onboard)",
+                        "src": "result_1399212101_133600-0-25-1",
+                        "override": {
+                            "lon": 150,
+                            "rotation": {
+                                "tilt": 20
+                            }
+                        }
+                    }
+                ]
             }
         ]
     }

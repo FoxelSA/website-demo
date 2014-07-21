@@ -240,7 +240,8 @@ $(document).ready(function() {
         controls: {
             keyboard: {
                 move: {
-                    active: true
+                    active: true,
+                    step: 2
                 },
                 zoom: {
                     active: true
