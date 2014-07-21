@@ -24,6 +24,11 @@
                             "rotation": {
                                 "tilt": 5,
                                 "roll": 5
+                            },
+                            "limits": {
+                                "lat": {
+                                    "min": -23
+                                }
                             }
                         }
                     }
