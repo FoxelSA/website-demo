@@ -27,10 +27,28 @@
                             },
                             "limits": {
                                 "lat": {
-                                    "min": -23
+                                    "min": -22
                                 }
                             }
-                        }
+                        },
+                        "order": -1
+                    },
+                    {
+                        "caption": "Place de la Comédie",
+                        "src": "result_1404642924_728013-0-25-1",
+                        "override": {
+                            "lon": 85,
+                            "rotation": {
+                                "tilt": 5,
+                                "roll": 3
+                            },
+                            "limits": {
+                                "lat": {
+                                    "min": -22
+                                }
+                            }
+                        },
+                        "order": -2
                     }
                 ]
             },
