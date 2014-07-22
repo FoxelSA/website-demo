@@ -187,6 +187,7 @@ footer .more {
         }
 
         #nav .pano img {
+            width:89px;
             height:50px;
             -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
             filter:alpha(opacity=80);
