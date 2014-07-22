@@ -182,6 +182,11 @@ if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
             </div>
             <div class="logo attribution">
                 <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
+                <div class="cc-by-sa">
+                    <img src="img/cc.large.png" width="16" alt="CC" />
+                    <img src="img/by.large.png" width="16" alt="BY" />
+                    <img src="img/sa.large.png" width="16" alt="SA" />
+                </div>
             </div>
             <div class="more">
                 <div class="wrap">

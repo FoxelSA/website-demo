@@ -73,6 +73,12 @@ footer .scroll {
         left:-9px;
     }
 
+footer .logo.attribution .cc-by-sa {
+    position:absolute;
+    top:0;
+    left:-100px;
+}
+
 footer .more {
     position:absolute;
     top:55px;
