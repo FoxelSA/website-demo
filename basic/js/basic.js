@@ -229,7 +229,8 @@ $(document).ready(function() {
 
         camera: {
             zoom: {
-                max: 1.5
+                max: 1.5,
+                current: 1.25
             }
         },
 
