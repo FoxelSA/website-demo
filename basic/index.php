@@ -41,9 +41,18 @@
  */
 
 
+/**
+ * _sortViews()
+ */
+function _sortViews($a,$b) {
+    if ($a->order == $b->order)
+        return ($a->pid < $b->pid) ? -1 : 1;
+    return ($a->order < $b->order) ? -1 : 1;
+}
+
 // request
 $s = isset($_GET['s']) ? trim(strtolower($_GET['s'])) : NULL;
-$p = isset($_GET['p']) ? (int)trim($_GET['p']) : 0;
+$p = isset($_GET['p']) ? (int)trim($_GET['p']) : NULL;
 
 // read json
 $json = json_decode(file_get_contents('config.json'));
@@ -64,8 +73,13 @@ foreach ($sets as &$_set) {
     // set found
     if ($_set->path == $s) {
         $set = $_set;
-        if (isset($_set->views[$p]))
-            $pano = $_set->views[$p];
+        // first view
+        if (is_null($p)) {
+            $p = 0;
+            usort($set->views,_sortViews);
+        }
+        if (isset($set->views[$p]))
+            $pano = $set->views[$p];
     }
 }
 
@@ -76,6 +90,7 @@ $exists = (!is_null($set) && !is_null($pano));
 if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
     $exists = true;
     $set = $sets[0];
+    usort($set->views,_sortViews);
     $pano = $set->views[0];
 }
 
@@ -136,11 +151,7 @@ if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
                     foreach ($sets as &$_set):
                         $_as = $_set->path == $set->path;
                         // ordering
-                        usort($_set->views,function($a,$b) {
-                            if ($a->order == $b->order)
-                                return ($a->pid < $b->pid) ? -1 : 1;
-                            return ($a->order < $b->order) ? -1 : 1;
-                        });
+                        usort($_set->views,_sortViews);
                 ?>
                     <div class="dataset">
                         <div class="set <?php if ($_as) print('active'); ?>"><?php print $_set->name; ?></div>
