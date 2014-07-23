@@ -85,6 +85,33 @@
                 ]
             },
             {
+                "name": "Jungfraujoch",
+                "path": "jungfraujoch",
+                "views": [
+                    {
+                        "caption": "Top of Europe, Swiss Alps",
+                        "src": "result_1392212267_208103-0-25-1",
+                        "override": {
+                            "lon": 260,
+                            "rotation": {
+                                "tilt": -8
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Top of Europe, Swiss Alps",
+                        "src": "result_1392212156_208103-0-25-1",
+                        "override": {
+                            "lon": 300,
+                            "rotation": {
+                                "tilt": -20,
+                                "roll": -10
+                            }
+                        }
+                    }
+                ]
+            },
+            {
                 "name": "Acid'Days 2014",
                 "path": "aciddays2014",
                 "views": [
@@ -107,6 +134,19 @@
                             "rotation": {
                                 "tilt": 20
                             }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Highway Run",
+                "path": "highway",
+                "views": [
+                    {
+                        "caption": "Roadworks around Neuchâtel",
+                        "src": "result_1394374171_810837-0-25-1",
+                        "override": {
+                            "lon": 345
                         }
                     }
                 ]
