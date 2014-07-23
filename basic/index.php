@@ -142,6 +142,7 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
     <script type="text/javascript" src="../lib/freepano/js/jquery.toastmessage.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.easing-1.3.min.js"></script>
     <script type="text/javascript" src="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar-3.0.2.min.js"></script>
+    <script type="text/javascript" src="js/howler-1.1.24.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/notify.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/watch-1.3.0.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/three.js/three.js"></script>
@@ -154,6 +155,14 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
                 src: '<?php print $pano->src; ?>',
                 override: <?php print (isset($pano->override)?json_encode($pano->override):'{}'); ?>
             };
+            <?php if (isset($pano->music)): ?>
+                var sound = new Howl({
+                    urls: ['<?php print ($set->auth?'restricted':'tiles').'/'.$set->path.'/assets/'.$pano->music; ?>'],
+                    volume: 0.25,
+                    autoplay: true,
+                    loop: true
+                }).play();
+            <?php endif; ?>
         <?php endif; ?>
     </script>
     <script type="text/javascript" src="js/basic.js"></script>
