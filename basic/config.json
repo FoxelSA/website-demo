@@ -67,7 +67,10 @@
                                     "min": -35
                                 }
                             }
-                        }
+                        },
+                        "notices": [
+                            "Music: World Geeks by Eoghan O'Sullivan's, remixed by <a href=\"http://sakrecoer.com/\" target=\"_blank\">Sakrecoer</a>, released under CC BY-SA"
+                        ]
                     },
                     {
                         "caption": "Montpellier, Esplanade Charles-de-Gaulle",
@@ -80,7 +83,10 @@
                                     "min": -35
                                 }
                             }
-                        }
+                        },
+                        "notices": [
+                            "Music: World Geeks by Eoghan O'Sullivan's, remixed by <a href=\"http://sakrecoer.com/\" target=\"_blank\">Sakrecoer</a>, released under CC BY-SA"
+                        ]
                     }
                 ]
             },

@@ -248,6 +248,13 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
                                 <a href="http://foxel.ch/license" target="_blank">Usage and Attribution</a>
                                 &nbsp;&copy;&nbsp;
                                 2013-2014 <a href="http://foxel.ch/" target="_blank">FOXEL SA</a>
+                            <?php if (isset($pano->notices) && is_array($pano->notices)): ?>
+                                <div class="notes">
+                                    <?php foreach ($pano->notices as $notice): ?>
+                                        <div class="note"><?php print $notice; ?></div>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
                             </div>
                         </div>
                     </div>
