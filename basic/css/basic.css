@@ -134,6 +134,21 @@ footer .more {
         line-height:130%;
     }
 
+    footer .more .notice {
+        padding-top:20px;
+        color:#888;
+        font-size:11px;
+    }
+
+        footer .more .notice a:link, footer .more .notice a:visited {
+            color:#888;
+        }
+
+        footer .more .notice a:hover, footer .more .notice a:active {
+            color:#fff;
+            text-decoration:none;
+        }
+
 
 #nav, #nav > .shade, #nav > .main {
     position:absolute;
@@ -287,9 +302,13 @@ footer .more {
 
 @media only screen and (max-width: 640px) {
 
-    footer .caption > div:first-child {
-        margin-right:175px;
+    footer .caption > div {
+        display:block;
     }
+
+        footer .caption > div:first-child {
+            margin-right:175px;
+        }
 
     footer .attribution .cc-by-sa {
         top:2px;
@@ -328,6 +347,10 @@ footer .more {
 
     footer .more .title {
         font-size:16px;
+    }
+
+    footer .more .notice {
+        text-align:right;
     }
 
 }

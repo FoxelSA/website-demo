@@ -237,6 +237,19 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
                         <p>Our mission is to develop technological solutions dedicated to 3D environment digitizing using technologies based on the CERN OHL license and other GNU GPL compatible licenses.</p>
                         <p>Our model and general approach predominantly strives for our Clients to reappropriate control of their data and further, their numeric territory.</p>
                         <p>Read more on <a href="http://foxel.ch/" target="_blank">http://foxel.ch</a></p>
+                        <div class="notice">
+                            <div class="cc-by-sa">
+                                <a href="http://foxel.ch/license" target="_blank"><img src="img/cc.large.png" width="20" alt="CC" title="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA)" /></a>
+                                <a href="http://foxel.ch/license" target="_blank"><img src="img/by.large.png" width="20" alt="BY" title="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA)" /></a>
+                                <a href="http://foxel.ch/license" target="_blank"><img src="img/sa.large.png" width="20" alt="SA" title="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA)" /></a>
+                            </div>
+                            <div class="copyright">
+                                CC BY-SA 4.0&nbsp;
+                                <a href="http://foxel.ch/license" target="_blank">Usage and Attribution</a>
+                                &nbsp;&copy;&nbsp;
+                                2013-2014 <a href="http://foxel.ch/" target="_blank">FOXEL SA</a>
+                            </div>
+                        </div>
                     </div>
                     <div style="clear:both;"></div>
                 </div>
