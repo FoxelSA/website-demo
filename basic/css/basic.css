@@ -63,10 +63,6 @@ footer .scroll {
     left:50%;
 }
 
-    footer.inactive .scroll, footer.smalldevice .scroll {
-        display:none;
-    }
-
     footer .scroll > img {
         position:absolute;
         top:0;

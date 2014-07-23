@@ -48,10 +48,6 @@ $(document).ready(function() {
         $('#wrapper').width($(window).width());
         $('#wrapper').height($(window).height());
 
-        if ($(window).width() <= 700)
-            $('footer').addClass('smalldevice');
-        else
-            $('footer').removeClass('smalldevice');
     };
 
     // layout
@@ -155,7 +151,7 @@ $(document).ready(function() {
      */
     $('footer').on('mouseenter',function() {
 
-        if ($(this).hasClass('inactive') || $(this).hasClass('smalldevice') || _isPanoMoving())
+        if (_isPanoMoving())
             return;
 
         var footerTargetHeight = $('footer .more').outerHeight(true) + $('footer .more').position().top;
@@ -179,7 +175,7 @@ $(document).ready(function() {
      */
     $('footer').on('mouseleave',function() {
 
-        if ($(this).hasClass('inactive') || $(this).hasClass('smalldevice') || _isPanoMoving())
+        if (_isPanoMoving())
             return;
 
         $('footer .shade').stop(true,false).animate({
