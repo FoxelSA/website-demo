@@ -263,7 +263,7 @@ $(document).ready(function() {
 
         sphere: {
             texture: {
-                dirName: 'tiles/'+cfg.path,
+                dirName: cfg.path,
                 baseName: cfg.src,
                 columns: 16,
                 rows: 8

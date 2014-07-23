@@ -58,12 +58,25 @@ $p = isset($_GET['p']) ? (int)trim($_GET['p']) : NULL;
 $json = json_decode(file_get_contents('config.json'));
 $sets = &$json->config->sets;
 
+// read auth json
+if (file_exists('auth.json')) {
+    $auth = json_decode(file_get_contents('auth.json'));
+    $authsets = &$auth->config->sets;
+    foreach ($authsets as &$authset)
+        $authset->auth = true;
+    $sets = array_merge($sets,$authsets);
+}
+
 // init
 $set = NULL;
 $pano = NULL;
 
 // parse
 foreach ($sets as &$_set) {
+    // auth
+    $_set->grant = false;
+    if (!isset($_set->auth))
+        $_set->auth = false;
     // default order
     foreach ($_set->views as $v => &$_view) {
         $_view->pid = $v;
@@ -94,6 +107,23 @@ if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
     $pano = $set->views[0];
 }
 
+// access submitted
+if (isset($_SERVER['PHP_AUTH_USER'])) {
+    if ($_SERVER['PHP_AUTH_USER'] == $set->acl->usr && $_SERVER['PHP_AUTH_PW'] == $set->acl->pwd) {
+        $set->grant = true;
+        $sets = array($set);
+    }
+}
+
+// access needed
+$cancel = false;
+if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
+    header('WWW-Authenticate: Basic realm="Restricted Area"');
+    header('HTTP/1.0 401 Unauthorized');
+    $cancel = true;
+    $exists = false;
+}
+
 ?>
 <head>
     <meta charset="UTF-8" />
@@ -118,11 +148,13 @@ if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.controls.js"></script>
     <script type="text/javascript">
-        var cfg = {
-            path: '<?php print $set->path.'/'.$pano->pid; ?>',
-            src: '<?php print $pano->src; ?>',
-            override: <?php print (isset($pano->override) ? json_encode($pano->override) : '{}'); ?>
-        };
+        <?php if (!$cancel && $exists): ?>
+            var cfg = {
+                path: '<?php print ($set->auth?'restricted':'tiles').'/'.$set->path.'/'.$pano->pid; ?>',
+                src: '<?php print $pano->src; ?>',
+                override: <?php print (isset($pano->override)?json_encode($pano->override):'{}'); ?>
+            };
+        <?php endif; ?>
     </script>
     <script type="text/javascript" src="js/basic.js"></script>
 </head>
@@ -133,9 +165,13 @@ if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
 
     <?php if ($exists): ?>
         <div id="pano" class="freepano"></div>
+    <?php elseif ($cancel): ?>
+        <div id="pnf">Access Unauthorized</div>
     <?php else: ?>
         <div id="pnf">Panorama Not Found</div>
     <?php endif; ?>
+
+<?php if (!$cancel && $exists): ?>
 
     <div id="nav">
         <div class="shade"></div>
@@ -150,6 +186,9 @@ if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
                     // sets
                     foreach ($sets as &$_set):
                         $_as = $_set->path == $set->path;
+                        // auth
+                        if ($_set->auth && !$_set->grant)
+                            continue;
                         // ordering
                         usort($_set->views,_sortViews);
                 ?>
@@ -170,7 +209,7 @@ if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
         </div>
     </div>
 
-    <footer class="<?php if (!$exists) print('inactive'); ?>">
+    <footer>
         <div class="shade"></div>
         <div class="main">
             <div class="caption">
@@ -204,6 +243,18 @@ if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
             </div>
         </div>
     </footer>
+
+<?php else: ?>
+
+    <footer>
+        <div class="main">
+            <div class="logo attribution">
+                <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
+            </div>
+        </div>
+    </footer>
+
+<?php endif; ?>
 
 </div>
 
