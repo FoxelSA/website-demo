@@ -154,17 +154,17 @@ $(document).ready(function() {
         if (_isPanoMoving())
             return;
 
-        var footerTargetHeight = $('footer .more').outerHeight(true) + $('footer .more').position().top;
+        var morePosition = $('footer .more').position().top;
+        var footerTargetHeight = $('footer .more').outerHeight(true) + morePosition;
 
         $('footer .shade').stop(true,false).animate({
             height: footerTargetHeight
         },400,'easeOutQuart');
 
         $('footer .main').stop(true,false).animate({
-            height: footerTargetHeight
+            height: (footerTargetHeight+Math.round(morePosition/4))
         },400,'easeOutQuart');
 
-        $('footer .scroll').stop(true,false).fadeOut(250);
         $('footer .logo.attribution').stop(true,false).fadeOut(250);
         $('footer .caption').stop(true,false).fadeOut(250);
 
@@ -186,7 +186,6 @@ $(document).ready(function() {
             height: footerStartHeight
         },400,'easeOutQuart');
 
-        $('footer .scroll').stop(true,false).delay(500).fadeIn(250);
         $('footer .logo.attribution').stop(true,false).delay(250).fadeIn(250);
         $('footer .caption').stop(true,false).delay(250).fadeIn(250);
 
@@ -197,7 +196,7 @@ $(document).ready(function() {
      */
     var _arrow = function() {
 
-        $('footer .scroll > img')
+        $('footer .scroll > div')
             .delay(1000)
             .animate({
                     marginTop: '+=5',

@@ -217,7 +217,7 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
                 <div><?php print $pano->caption; ?></div>
             </div>
             <div class="scroll">
-                <img src="img/scroll.png" alt="" width="18" />
+                <div><img src="img/scroll.png" alt="" width="18" /></div>
             </div>
             <div class="logo attribution">
                 <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
@@ -229,8 +229,8 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
             </div>
             <div class="more">
                 <div class="wrap">
-                    <div class="col logo">
-                        <a href="http://foxel.ch/" target="_blank"><img src="img/foxel.png" alt="FOXEL" width="360" height="60" /></a>
+                    <div class="col foxel">
+                        <a href="http://foxel.ch/" target="_blank"><img src="img/foxel.png" alt="FOXEL" width="320" height="54" /></a>
                     </div>
                     <div class="col text">
                         <div class="title">Expert in Stereophotogrammetry<br />and 3D Environment Digitizing</div>

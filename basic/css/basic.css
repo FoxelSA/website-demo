@@ -57,17 +57,42 @@ a:hover, a:active {
 }
 
 
-footer .scroll {
-    position:absolute;
-    top:18px;
-    left:50%;
+footer .caption > div {
+    display:inline-block;
+    margin-right:175px;
 }
 
-    footer .scroll > img {
+    footer .caption > div:first-child {
+        margin-right:10px;
+    }
+
+footer .scroll {
+    position:absolute;
+    top:-40px;
+    left:50%;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+    filter:alpha(opacity=65);
+    -moz-opacity:0.65;
+    -khtml-opacity:0.65;
+    opacity:0.65;
+}
+
+    footer .scroll > div {
         position:absolute;
         top:0;
-        left:-9px;
+        left:-24px;
+        padding:5px 15px;
+        padding-bottom:0;
+        background-color:#000;
+        -webkit-border-radius:7px;
+        -moz-border-radius:7px;
+        border-radius:7px;
     }
+
+        footer .scroll > div > img {
+            position:relative;
+            top:1px;
+        }
 
 footer .attribution .cc-by-sa {
     position:absolute;
@@ -90,24 +115,24 @@ footer .more {
 
     footer .more .col {
         float:left;
-        margin-left:30px;
     }
 
-    footer .more .logo {
-        position:relative;
-        top:-4px;
+    footer .more .foxel {
+        margin-left:5px;
+        margin-right:60px;
         margin-bottom:30px;
     }
 
     footer .more .text {
         width:500px;
+        font-size:15px;
+        line-height:140%;
     }
 
     footer .more .title {
         font-size:22px;
         line-height:130%;
     }
-
 
 
 #nav, #nav > .shade, #nav > .main {
@@ -208,26 +233,63 @@ footer .more {
                 border:solid 1px #ecb100;
             }
 
+
 #pnf {
     margin-top:200px;
     color:#f00;
     text-align:center;
 }
 
-@media only screen and (max-width: 700px) and (orientation:portrait) {
 
-    footer .scroll {
-        display:none;
+@media only screen and (max-width: 890px) {
+
+    footer .more > .wrap {
+        max-width:800px;
     }
 
-    footer .caption > div {
-        display:block;
+    footer .more .foxel {
+        margin-top:6px;
+        margin-right:50px;
+    }
+
+        footer .more .foxel img {
+            width:200px;
+            height:34px;
+        }
+
+    footer .more .text {
+        font-size:13px;
+    }
+
+    footer .more .title {
+        font-size:18px;
+    }
+
+}
+
+
+@media only screen and (max-width: 760px) {
+
+    footer .more > .wrap {
+        max-width:600px;
+    }
+
+    footer .more .foxel {
+        margin-right:35px;
+    }
+
+    footer .more .text {
+        width:340px;
+    }
+
+}
+
+
+@media only screen and (max-width: 640px) {
+
+    footer .caption > div:first-child {
         margin-right:175px;
     }
-
-        footer .caption > div:first-child {
-            margin-right:10px;
-        }
 
     footer .attribution .cc-by-sa {
         top:2px;
@@ -236,6 +298,36 @@ footer .more {
 
     footer .more {
         top:65px;
+    }
+
+}
+
+
+@media only screen and (max-width: 590px) {
+
+    footer .more .col {
+        float:none;
+    }
+
+    footer .more .foxel {
+        margin:0 10px;
+        text-align:right;
+    }
+
+        footer .more .foxel img {
+            width:150px;
+            height:25px;
+        }
+
+    footer .more .text {
+        width:auto;
+        margin:0 10px;
+        margin-top:30px;
+        font-size:12px;
+    }
+
+    footer .more .title {
+        font-size:16px;
     }
 
 }
