@@ -124,6 +124,9 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
     $exists = false;
 }
 
+// folder
+$path = $set->auth ? 'restricted' : 'tiles';
+
 ?>
 <head>
     <meta charset="UTF-8" />
@@ -151,13 +154,13 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
     <script type="text/javascript">
         <?php if (!$cancel && $exists): ?>
             var cfg = {
-                path: '<?php print ($set->auth?'restricted':'tiles').'/'.$set->path.'/'.$pano->pid; ?>',
+                path: '<?php print $path.'/'.$set->path.'/'.$pano->pid; ?>',
                 src: '<?php print $pano->src; ?>',
                 override: <?php print (isset($pano->override)?json_encode($pano->override):'{}'); ?>
             };
             <?php if (isset($pano->music)): ?>
                 var sound = new Howl({
-                    urls: ['<?php print ($set->auth?'restricted':'tiles').'/'.$set->path.'/assets/'.$pano->music; ?>'],
+                    urls: ['<?php print $path.'/'.$set->path.'/assets/'.$pano->music; ?>'],
                     volume: 0.25,
                     autoplay: true,
                     loop: true
@@ -208,7 +211,7 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
                         foreach ($_set->views as &$_view):
                             $_av = $_view->pid == $pano->pid;
                     ?>
-                        <div class="pano"><a href="./?s=<?php print $_set->path; ?>&p=<?php print $_view->pid; ?>"><img <?php if ($_as && $_av) print('class="active"'); ?> src="<?php print ($set->auth?'restricted':'tiles'); ?>/<?php print $_set->path.'/'.$_view->pid; ?>/preview.png" alt="<?php print $_set->name.', '.$_view->caption; ?>" title="<?php print $_set->name.', '.$_view->caption; ?>" /></a></div>
+                        <div class="pano"><a href="./?s=<?php print $_set->path; ?>&p=<?php print $_view->pid; ?>"><img <?php if ($_as && $_av) print('class="active"'); ?> src="<?php print $path; ?>/<?php print $_set->path.'/'.$_view->pid; ?>/preview.png" alt="<?php print $_set->name.', '.$_view->caption; ?>" title="<?php print $_set->name.', '.$_view->caption; ?>" /></a></div>
                     <?php endforeach; ?>
                     </div>
                 <?php endforeach; ?>
@@ -242,10 +245,14 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
                         <a href="http://foxel.ch/" target="_blank"><img src="img/foxel.png" alt="FOXEL" width="320" height="54" /></a>
                     </div>
                     <div class="col text">
-                        <div class="title">Expert in Stereophotogrammetry<br />and 3D Environment Digitizing</div>
-                        <p>Our mission is to develop technological solutions dedicated to 3D environment digitizing using technologies based on the CERN OHL license and other GNU GPL compatible licenses.</p>
-                        <p>Our model and general approach predominantly strives for our Clients to reappropriate control of their data and further, their numeric territory.</p>
-                        <p>Read more on <a href="http://foxel.ch/" target="_blank">http://foxel.ch</a></p>
+                        <?php if (!isset($set->content) || !$set->content): ?>
+                            <div class="title">Expert in Stereophotogrammetry<br />and 3D Environment Digitizing</div>
+                            <p>Our mission is to develop technological solutions dedicated to 3D environment digitizing using technologies based on the CERN OHL license and other GNU GPL compatible licenses.</p>
+                            <p>Our model and general approach predominantly strives for our Clients to reappropriate control of their data and further, their numeric territory.</p>
+                            <p>Read more on <a href="http://foxel.ch/" target="_blank">http://foxel.ch</a></p>
+                        <?php else: ?>
+                            <?php include $path.'/'.$set->path.'/assets/content.html'; ?>
+                        <?php endif; ?>
                         <div class="notice">
                             <div class="cc-by-sa">
                                 <a href="http://foxel.ch/license" target="_blank"><img src="img/cc.large.png" width="20" alt="CC" title="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA)" /></a>
