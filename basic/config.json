@@ -12,6 +12,11 @@
                             "lon": 220,
                             "rotation": {
                                 "tilt": 7
+                            },
+                            "limits": {
+                                "lat": {
+                                    "min": -28
+                                }
                             }
                         }
                     },
@@ -22,6 +27,11 @@
                             "lon": 272,
                             "rotation": {
                                 "tilt": 5.5
+                            },
+                            "limits": {
+                                "lat": {
+                                    "min": -28
+                                }
                             }
                         }
                     },
