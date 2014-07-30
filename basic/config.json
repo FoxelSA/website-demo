@@ -2,6 +2,49 @@
     "config": {
         "sets": [
             {
+                "name": "Genève",
+                "path": "geneve",
+                "views": [
+                    {
+                        "caption": "Mur des Réformateurs",
+                        "src": "result_1404374407_319830-0-25-1",
+                        "override": {
+                            "lon": 220,
+                            "rotation": {
+                                "tilt": 7
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Mur des Réformateurs",
+                        "src": "result_1404374419_319830-0-25-1",
+                        "override": {
+                            "lon": 272,
+                            "rotation": {
+                                "tilt": 5.5
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Place de Neuve",
+                        "src": "result_1404376713_514657-0-25-1",
+                        "override": {
+                            "lon": 90
+                        }
+                    },
+                    {
+                        "caption": "Place de Neuve",
+                        "src": "result_1404376721_514657-0-25-1",
+                        "override": {
+                            "lon": 30,
+                            "rotation": {
+                                "roll": 0.5
+                            }
+                        }
+                    }
+                ]
+            },
+            {
                 "name": "Montpellier",
                 "path": "montpellier",
                 "views": [
