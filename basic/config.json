@@ -236,6 +236,13 @@
                         "override": {
                             "lon": 345
                         }
+                    },
+                    {
+                        "caption": "Roadworks around Neuchâtel",
+                        "src": "result_1394374203_810837-0-25-1",
+                        "override": {
+                            "lon": 345
+                        }
                     }
                 ]
             }
