@@ -2,7 +2,7 @@
     "config": {
         "sets": [
             {
-                "name": "Genève",
+                "name": "Geneva City",
                 "path": "geneve",
                 "views": [
                     {
@@ -55,7 +55,7 @@
                 ]
             },
             {
-                "name": "Montpellier",
+                "name": "Montpellier City",
                 "path": "montpellier",
                 "views": [
                     {
