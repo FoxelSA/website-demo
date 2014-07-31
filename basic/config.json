@@ -200,6 +200,33 @@
                 ]
             },
             {
+                "name": "University of Geneva",
+                "path": "unige",
+                "views": [
+                    {
+                        "caption": "Uni Mail building",
+                        "src": "result_1391860250_716112-0-25-1",
+                        "override": {
+                            "lon": 330
+                        }
+                    },
+                    {
+                        "caption": "Uni Mail building",
+                        "src": "result_1391862015_420152_0-25-1",
+                        "override": {
+                            "lon": 354
+                        }
+                    },
+                    {
+                        "caption": "Uni Mail building",
+                        "src": "result_1391861618_801142_0-25-1",
+                        "override": {
+                            "lon": 89
+                        }
+                    }
+                ]
+            },
+            {
                 "name": "Highway Run",
                 "path": "highway",
                 "views": [
