@@ -278,4 +278,12 @@ $(document).ready(function() {
     $('#pano').panorama(options);
     panorama = $('#pano').data('pano');
 
+    $(document).on('keypress',function(e){
+        switch(e.keyCode) {
+            case 32:
+                console.log('lon ['+panorama.lon+'] lat ['+panorama.lat+'] tilt ['+panorama.rotation.tilt+'] roll ['+panorama.rotation.roll+']');
+                break;
+        }
+    });
+
 });
