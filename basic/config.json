@@ -9,13 +9,13 @@
                         "caption": "Mur des Réformateurs",
                         "src": "result_1404374407_319830-0-25-1",
                         "override": {
-                            "lon": 220,
                             "rotation": {
-                                "tilt": 7
+                                "heading": -35,
+                                "roll": 6
                             },
                             "limits": {
                                 "lat": {
-                                    "min": -28
+                                    "max": 30
                                 }
                             }
                         }
