@@ -220,7 +220,11 @@ $(document).ready(function() {
     // options
     var options = {
 
-        lon: 180,
+        rotation: {
+            heading: -90,
+            tilt: 0,
+            roll: 0
+        },
 
         camera: {
             zoom: {
