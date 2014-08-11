@@ -11,11 +11,12 @@
                         "override": {
                             "rotation": {
                                 "heading": -35,
-                                "roll": 6
+                                "roll": 6,
+                                "tilt": 3
                             },
                             "limits": {
                                 "lat": {
-                                    "max": 30
+                                    "max": 25
                                 }
                             }
                         }
@@ -24,13 +25,14 @@
                         "caption": "Mur des Réformateurs",
                         "src": "result_1404374419_319830-0-25-1",
                         "override": {
-                            "lon": 272,
                             "rotation": {
-                                "tilt": 5.5
+                                "heading": 0,
+                                "roll": 5.9,
+                                "tilt": 3
                             },
                             "limits": {
                                 "lat": {
-                                    "min": -28
+                                    "max": 25
                                 }
                             }
                         }
@@ -39,16 +41,17 @@
                         "caption": "Place de Neuve",
                         "src": "result_1404376713_514657-0-25-1",
                         "override": {
-                            "lon": 90
+                            "rotation": {
+                                "heading": 205
+                            }
                         }
                     },
                     {
                         "caption": "Place de Neuve",
                         "src": "result_1404376721_514657-0-25-1",
                         "override": {
-                            "lon": 30,
                             "rotation": {
-                                "roll": 0.5
+                                "heading": 135
                             }
                         }
                     }
@@ -66,21 +69,23 @@
                         "caption": "Place Ernest Granier",
                         "src": "result_1403179643_724762-0-25-1",
                         "override": {
-                            "lon": 25
+                            "rotation": {
+                                "heading": 110
+                            }
                         }
                     },
                     {
                         "caption": "Monument aux morts de toutes les guerres",
                         "src": "result_1404644424_925651-0-25-1",
                         "override": {
-                            "lon": 200,
                             "rotation": {
-                                "tilt": 5,
-                                "roll": 5
+                                "heading": 270,
+                                "roll": 5,
+                                "tilt": 3.5
                             },
                             "limits": {
                                 "lat": {
-                                    "min": -22
+                                    "max": 20
                                 }
                             }
                         },
@@ -90,14 +95,14 @@
                         "caption": "Place de la Comédie",
                         "src": "result_1404642924_728013-0-25-1",
                         "override": {
-                            "lon": 85,
                             "rotation": {
-                                "tilt": 5,
-                                "roll": 3
+                                "heading": 180,
+                                "roll": 4.5,
+                                "tilt": 5
                             },
                             "limits": {
                                 "lat": {
-                                    "min": -22
+                                    "max": 20
                                 }
                             }
                         },
