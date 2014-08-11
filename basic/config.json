@@ -191,10 +191,10 @@
                         "caption": "Motorcycling in Switzerland (onboard)",
                         "src": "result_1399212243_133600-0-25-1",
                         "override": {
-                            "lon": 150,
                             "rotation": {
-                                "tilt": 10,
-                                "roll": 10
+                                "heading": -120,
+                                "roll": 10,
+                                "tilt": 10
                             }
                         }
                     },
@@ -202,9 +202,9 @@
                         "caption": "Motorcycling in Switzerland (onboard)",
                         "src": "result_1399212101_133600-0-25-1",
                         "override": {
-                            "lon": 150,
                             "rotation": {
-                                "tilt": 20
+                                "heading": -110,
+                                "roll": 20
                             }
                         }
                     }
