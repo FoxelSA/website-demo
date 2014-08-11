@@ -218,21 +218,27 @@
                         "caption": "Uni Mail building",
                         "src": "result_1391860250_716112-0-25-1",
                         "override": {
-                            "lon": 330
+                            "rotation": {
+                                "heading": 50
+                            }
                         }
                     },
                     {
                         "caption": "Uni Mail building",
                         "src": "result_1391862015_420152_0-25-1",
                         "override": {
-                            "lon": 354
+                            "rotation": {
+                                "heading": 86
+                            }
                         }
                     },
                     {
                         "caption": "Uni Mail building",
                         "src": "result_1391861618_801142_0-25-1",
                         "override": {
-                            "lon": 89
+                            "rotation": {
+                                "heading": 178
+                            }
                         }
                     }
                 ]
@@ -245,14 +251,18 @@
                         "caption": "Roadworks around Neuchâtel",
                         "src": "result_1394374171_810837-0-25-1",
                         "override": {
-                            "lon": 345
+                            "rotation": {
+                                "heading": 70
+                            }
                         }
                     },
                     {
                         "caption": "Roadworks around Neuchâtel",
                         "src": "result_1394374203_810837-0-25-1",
                         "override": {
-                            "lon": 345
+                            "rotation": {
+                                "heading": 60
+                            }
                         }
                     }
                 ]
