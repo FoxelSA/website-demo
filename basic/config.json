@@ -118,11 +118,13 @@
                         "caption": "Université Montpellier 2, with Richard M. Stallman",
                         "src": "result_1404826948_573218-0-25-1",
                         "override": {
-                            "lon": 50,
-                            "lat": -8,
+                            "lat": 10,
+                            "rotation": {
+                                "heading": 150
+                            },
                             "limits": {
                                 "lat": {
-                                    "min": -35
+                                    "max": 35
                                 }
                             }
                         },
@@ -135,11 +137,13 @@
                         "caption": "Montpellier, Esplanade Charles-de-Gaulle",
                         "src": "result_1404655303_920436-0-25-1",
                         "override": {
-                            "lon": 80,
-                            "lat": -10,
+                            "lat": 10,
+                            "rotation": {
+                                "heading": 175
+                            },
                             "limits": {
                                 "lat": {
-                                    "min": -35
+                                    "max": 35
                                 }
                             }
                         },
@@ -158,9 +162,10 @@
                         "caption": "Top of Europe, Swiss Alps",
                         "src": "result_1392212267_208103-0-25-1",
                         "override": {
-                            "lon": 260,
                             "rotation": {
-                                "tilt": -8
+                                "heading": 0,
+                                "roll": -7.5,
+                                "tilt": -2.5
                             }
                         }
                     },
@@ -168,10 +173,11 @@
                         "caption": "Top of Europe, Swiss Alps",
                         "src": "result_1392212156_208103-0-25-1",
                         "override": {
-                            "lon": 300,
+                            "lat": 10,
                             "rotation": {
-                                "tilt": -20,
-                                "roll": -10
+                                "heading": -80,
+                                "roll": -18,
+                                "tilt": -7.5
                             }
                         }
                     }
