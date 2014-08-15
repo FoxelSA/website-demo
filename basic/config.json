@@ -184,27 +184,33 @@
                 ]
             },
             {
-                "name": "Acid'Days 2014",
-                "path": "aciddays2014",
+                "name": "Musée Clin d'Ailes",
+                "path": "clindailes",
                 "views": [
                     {
-                        "caption": "Motorcycling in Switzerland (onboard)",
-                        "src": "result_1399212243_133600-0-25-1",
+                        "caption": "Musée de l'Aviation Militaire de Payerne",
+                        "src": "result_1403543102_320637-0-25-1",
                         "override": {
                             "rotation": {
-                                "heading": -120,
-                                "roll": 10,
-                                "tilt": 10
+                                "heading": -90
                             }
                         }
                     },
                     {
-                        "caption": "Motorcycling in Switzerland (onboard)",
-                        "src": "result_1399212101_133600-0-25-1",
+                        "caption": "Musée de l'Aviation Militaire de Payerne",
+                        "src": "result_1403543971_654291-0-25-1",
                         "override": {
                             "rotation": {
-                                "heading": -110,
-                                "roll": 20
+                                "heading": -90
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Musée de l'Aviation Militaire de Payerne",
+                        "src": "result_1403542317_106213-0-25-1",
+                        "override": {
+                            "rotation": {
+                                "heading": -90
                             }
                         }
                     }
@@ -238,6 +244,33 @@
                         "override": {
                             "rotation": {
                                 "heading": 178
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Acid'Days 2014",
+                "path": "aciddays2014",
+                "views": [
+                    {
+                        "caption": "Motorcycling in Switzerland (onboard)",
+                        "src": "result_1399212243_133600-0-25-1",
+                        "override": {
+                            "rotation": {
+                                "heading": -120,
+                                "roll": 10,
+                                "tilt": 10
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Motorcycling in Switzerland (onboard)",
+                        "src": "result_1399212101_133600-0-25-1",
+                        "override": {
+                            "rotation": {
+                                "heading": -110,
+                                "roll": 20
                             }
                         }
                     }
