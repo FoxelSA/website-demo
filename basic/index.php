@@ -140,11 +140,11 @@ $path = $set->auth ? 'restricted' : 'tiles';
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/css/main.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/basic.css" />
     <script type="text/javascript" src="../lib/freepano/js/jquery-2.1.0.js"></script>
-    <script type="text/javascript" src="../lib/freepano/js/touchHandler.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.toastmessage.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.easing-1.3.min.js"></script>
     <script type="text/javascript" src="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar-3.0.2.min.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/hammer-2.0.2.min.js"></script>
     <script type="text/javascript" src="js/howler-1.1.24.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/notify.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/watch-1.3.0.js"></script>
