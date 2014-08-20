@@ -143,6 +143,7 @@ $path = $set->auth ? 'restricted' : 'tiles';
     <script type="text/javascript" src="../lib/freepano/js/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.toastmessage.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.easing-1.3.min.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/jquery.browser-0.0.6.min.js"></script>
     <script type="text/javascript" src="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar-3.0.2.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/hammer-2.0.2.min.js"></script>
     <script type="text/javascript" src="js/howler-1.1.24.min.js"></script>

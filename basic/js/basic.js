@@ -239,6 +239,9 @@ $(document).ready(function() {
 
         controls: {
             touch: {
+                move: {
+                    active: true
+                },
                 zoom: {
                     active: true
                 }
