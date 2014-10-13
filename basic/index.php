@@ -53,6 +53,7 @@ function _sortViews($a,$b) {
 // request
 $s = isset($_GET['s']) ? trim(strtolower($_GET['s'])) : NULL;
 $p = isset($_GET['p']) ? (int)trim($_GET['p']) : NULL;
+$t = isset($_GET['t']) ? trim(strtolower($_GET['t'])) : NULL;
 
 // read json
 $json = json_decode(file_get_contents('config.json'));
@@ -202,6 +203,9 @@ $path = $set->auth ? 'restricted' : 'tiles';
                         // auth
                         if ($_set->auth && !$_set->grant)
                             continue;
+                        // gallery
+                        if ($t == 'set' && !$_as)
+                            continue;
                         // ordering
                         usort($_set->views,_sortViews);
                 ?>
@@ -212,7 +216,7 @@ $path = $set->auth ? 'restricted' : 'tiles';
                         foreach ($_set->views as &$_view):
                             $_av = $_view->pid == $pano->pid;
                     ?>
-                        <div class="pano"><a href="./?s=<?php print $_set->path; ?>&p=<?php print $_view->pid; ?>"><img <?php if ($_as && $_av) print('class="active"'); ?> src="<?php print $path; ?>/<?php print $_set->path.'/'.$_view->pid; ?>/preview.png" alt="<?php print $_set->name.', '.$_view->caption; ?>" title="<?php print $_set->name.', '.$_view->caption; ?>" /></a></div>
+                        <div class="pano"><a href="./?s=<?php print $_set->path; ?><?php if ($t == 'set') print '&t=set'; ?>&p=<?php print $_view->pid; ?>"><img <?php if ($_as && $_av) print('class="active"'); ?> src="<?php print $path; ?>/<?php print $_set->path.'/'.$_view->pid; ?>/preview.png" alt="<?php print $_set->name.', '.$_view->caption; ?>" title="<?php print $_set->name.', '.$_view->caption; ?>" /></a></div>
                     <?php endforeach; ?>
                     </div>
                 <?php endforeach; ?>
@@ -243,7 +247,11 @@ $path = $set->auth ? 'restricted' : 'tiles';
             <div class="more">
                 <div class="wrap">
                     <div class="col foxel">
-                        <a href="http://foxel.ch/" target="_blank"><img src="img/foxel.png" alt="FOXEL" width="320" height="54" /></a>
+                        <?php if (!isset($set->content) || !$set->content): ?>
+                            <a href="http://foxel.ch/" target="_blank"><img src="img/foxel.png" alt="FOXEL" width="320" height="54" /></a>
+                        <?php else: ?>
+                            <div style="width:320px;height:50px;"></div>
+                        <?php endif; ?>
                     </div>
                     <div class="col text">
                         <?php if (!isset($set->content) || !$set->content): ?>

@@ -2,6 +2,112 @@
     "config": {
         "sets": [
             {
+                "name": "GE200.CH",
+                "path": "ge200",
+                "views": [
+                    {
+                        "caption": "L'Amarr@ge, Bains lacustres sur le Rhône",
+                        "src": "result_1404377754_886368-0-25-1",
+                        "override": {
+                            "lat": 5,
+                            "rotation": {
+                                "heading": -80,
+                                "tilt": 1
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 15
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "caption": "L'Amarr@ge, Bains lacustres sur le Rhône",
+                        "src": "result_1404377801_433901-0-25-1",
+                        "override": {
+                            "lat": 5,
+                            "rotation": {
+                                "heading": 130,
+                                "tilt": 1
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 15
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "caption": "L'Amarr@ge, Bains lacustres sur le Rhône",
+                        "src": "result_1404370317_886368-0-25-1",
+                        "override": {
+                            "lat": 5,
+                            "rotation": {
+                                "heading": 175,
+                                "roll": 8.5,
+                                "tilt": 0.5
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 25
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "caption": "L'Amarr@ge, Bains lacustres sur le Rhône",
+                        "src": "result_1404370401_886368-0-25-1",
+                        "override": {
+                            "lat": 5,
+                            "rotation": {
+                                "heading": 85,
+                                "roll": 6.5,
+                                "tilt": 2.5
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 30
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "caption": "L'Amarr@ge, Bains lacustres sur le Rhône",
+                        "src": "result_1404370444_886368-0-25-1",
+                        "override": {
+                            "lat": 10,
+                            "rotation": {
+                                "heading": -140,
+                                "roll": 9
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 30
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "caption": "L'Amarr@ge, Bains lacustres sur le Rhône",
+                        "src": "result_1404370464_886368-0-25-1",
+                        "override": {
+                            "lat": 10,
+                            "rotation": {
+                                "heading": 60,
+                                "tilt": 2,
+                                "roll": 8
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 25
+                                }
+                            }
+                        }
+                    }
+                ],
+                "content": true
+            },
+            {
                 "name": "Geneva City",
                 "path": "geneve",
                 "views": [
