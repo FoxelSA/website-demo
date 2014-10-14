@@ -42,9 +42,9 @@
 
 
 /**
- * _sortViews()
+ * sortViews()
  */
-function _sortViews($a,$b) {
+function sortViews($a,$b) {
     if ($a->order == $b->order)
         return ($a->pid < $b->pid) ? -1 : 1;
     return ($a->order < $b->order) ? -1 : 1;
@@ -90,7 +90,7 @@ foreach ($sets as &$_set) {
         // first view
         if (is_null($p)) {
             $p = 0;
-            usort($set->views,_sortViews);
+            usort($set->views,'sortViews');
         }
         if (isset($set->views[$p]))
             $pano = $set->views[$p];
@@ -104,7 +104,7 @@ $exists = (!is_null($set) && !is_null($pano));
 if (!$exists && !isset($_GET['s']) && !isset($_GET['p'])) {
     $exists = true;
     $set = $sets[0];
-    usort($set->views,_sortViews);
+    usort($set->views,'sortViews');
     $pano = $set->views[0];
 }
 
@@ -207,7 +207,7 @@ $path = $set->auth ? 'restricted' : 'tiles';
                         if ($t == 'set' && !$_as)
                             continue;
                         // ordering
-                        usort($_set->views,_sortViews);
+                        usort($_set->views,'sortViews');
                 ?>
                     <div class="dataset">
                         <div class="set <?php if ($_as) print('active'); ?>"><?php print $_set->name; ?></div>
