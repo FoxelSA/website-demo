@@ -2,6 +2,69 @@
     "config": {
         "sets": [
             {
+                "name": "Geneva Festival 2014",
+                "path": "fetesdegeneve2014",
+                "views": [
+                    {
+                        "caption": "&quot;Man and Time&quot; Fireworks &nbsp;|&nbsp; Patek Philippe &nbsp;|&nbsp; Hôtel de la Paix",
+                        "src": "result_1407609505_039465-0-25-1",
+                        "override": {
+                            "rotation": {
+                                "heading": -75
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 35
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "caption": "&quot;Man and Time&quot; Fireworks &nbsp;|&nbsp; Patek Philippe &nbsp;|&nbsp; Hôtel de la Paix",
+                        "src": "result_1407609611_039465-0-25-1",
+                        "override": {
+                            "rotation": {
+                                "heading": -75
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 35
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "caption": "&quot;Man and Time&quot; Fireworks &nbsp;|&nbsp; Patek Philippe &nbsp;|&nbsp; Hôtel de la Paix",
+                        "src": "result_1407620527_848967-0-25-1",
+                        "override": {
+                            "rotation": {
+                                "heading": -75
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 35
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "caption": "&quot;Man and Time&quot; Fireworks &nbsp;|&nbsp; Patek Philippe &nbsp;|&nbsp; Hôtel de la Paix",
+                        "src": "result_1407620798_742393-0-25-1",
+                        "override": {
+                            "rotation": {
+                                "heading": -75
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 35
+                                }
+                            }
+                        }
+                    }
+                ],
+                "content": true
+            },
+            {
                 "name": "GE200.CH",
                 "path": "ge200",
                 "views": [
