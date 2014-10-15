@@ -81,11 +81,11 @@ $(document).ready(function() {
         // navigation open by default
         _navigation_open();
 
-        // navigation close automatically after 3 seconds if no interaction
+        // navigation close automatically after 5 seconds if no interaction
         setTimeout(function() {
             if (!navInteraction)
                 _navigation_close();
-        },3000);
+        },5000);
 
     };
 
