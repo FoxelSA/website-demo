@@ -193,6 +193,14 @@ footer .more {
         text-align:center;
     }
 
+    #nav > .tab > .act {
+        cursor:pointer;
+    }
+
+        #nav > .tab > .act.active {
+            color:#ecb100;
+        }
+
 #nav .scrollable .area {
     padding-right:15px;
 }

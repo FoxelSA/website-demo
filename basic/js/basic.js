@@ -56,6 +56,9 @@ $(document).ready(function() {
         _layout();
     });
 
+    // navigation interaction
+    var navInteraction = false;
+
     /**
      * init nav scrollbar
      */
@@ -74,6 +77,16 @@ $(document).ready(function() {
                 updateOnContentResize: true
             }
         });
+
+        // navigation open by default
+        _navigation_open();
+
+        // navigation close automatically after 3 seconds if no interaction
+        setTimeout(function() {
+            if (!navInteraction)
+                _navigation_close();
+        },3000);
+
     };
 
     /**
@@ -85,21 +98,16 @@ $(document).ready(function() {
         return !(panorama.mode.mousedown=='undefined' || !panorama.mode.mousedown);
     };
 
-    // nav scrollbar
-    _scrollbar();
-
-    // nav
-    var navStartHeight = 0;
-
     /**
-     * nav mouseenter
+     * panorama navigation open
      */
-    $('#nav').on('mouseenter',function() {
-
-        if (_isPanoMoving())
-            return;
+    var _navigation_open = function() {
 
         var navTargetHeight = $('#nav .main').outerHeight(true);
+
+        $('#nav .main').addClass('active');
+        $('#nav .tab .act').addClass('active');
+        $('#nav .tab .act .txt').html('Close');
 
         $('#nav .shade').stop(true,false).animate({
             height: navTargetHeight,
@@ -116,15 +124,16 @@ $(document).ready(function() {
 
         $('#nav .tab .lay').stop(true,false).fadeTo(400,0.85);
 
-    });
+    };
 
     /**
-     * nav mouseleave
+     * panorama navigation close
      */
-    $('#nav').on('mouseleave',function() {
+    var _navigation_close = function() {
 
-        if (_isPanoMoving())
-            return;
+        $('#nav .main').removeClass('active');
+        $('#nav .tab .act').removeClass('active');
+        $('#nav .tab .act .txt').html('More Demos');
 
         $('#nav .shade').stop(true,false).animate({
             height: navStartHeight,
@@ -141,6 +150,33 @@ $(document).ready(function() {
 
         $('#nav .tab .lay').stop(true,false).fadeTo(400,0.5);
 
+    };
+
+    // nav scrollbar
+    _scrollbar();
+
+    // nav
+    var navStartHeight = 0;
+
+    /**
+     * nav click
+     */
+    $('#nav > .tab > .act').on('click',function() {
+        $('#nav > .main').hasClass('active') ? _navigation_close() : _navigation_open();
+    });
+
+    /**
+     * nav main mouseenter
+     */
+    $('#nav > .main').on('mouseenter',function() {
+        navInteraction = true;
+    });
+
+    /**
+     * nav main mouseleave
+     */
+    $('#nav > .main').on('mouseleave',function() {
+        navInteraction = false;
     });
 
     // footer

@@ -191,7 +191,7 @@ $path = $set->auth ? 'restricted' : 'tiles';
         <div class="shade"></div>
         <div class="tab">
             <div class="lay"></div>
-            <div>More Demos</div>
+            <div class="act"><span style="padding-right:15px;">–</span><span class="txt">More Demos</span><span style="padding-left:15px;">–</span></div>
         </div>
         <div class="main">
             <div class="scrollable">
