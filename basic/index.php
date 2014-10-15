@@ -136,21 +136,21 @@ $path = $set->auth ? 'restricted' : 'tiles';
     <meta name="description" content="Expert in Stereophotogrammetry and 3D Environment Digitizing" />
     <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
-    <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/css/jquery.toastmessage.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/js/thirdparty/jquery-toastmessage/css/jquery.toastmessage.css" />
     <link rel="stylesheet" type="text/css" media="all" href="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/example/css/main.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/basic.css" />
-    <script type="text/javascript" src="../lib/freepano/js/jquery-2.1.0.js"></script>
-    <script type="text/javascript" src="../lib/freepano/js/jquery.mousewheel.js"></script>
-    <script type="text/javascript" src="../lib/freepano/js/jquery.toastmessage.js"></script>
-    <script type="text/javascript" src="../lib/freepano/js/jquery.easing-1.3.min.js"></script>
-    <script type="text/javascript" src="../lib/freepano/js/jquery.browser-0.0.6.min.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/jquery.mousewheel-3.1.12.min.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/jquery-toastmessage/jquery.toastmessage.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/jquery.easing-1.3.min.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/jquery.browser-0.0.6.min.js"></script>
     <script type="text/javascript" src="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar-3.0.2.min.js"></script>
-    <script type="text/javascript" src="../lib/freepano/js/hammer-2.0.2.min.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/hammer.js/hammer-2.0.4.min.js"></script>
     <script type="text/javascript" src="js/howler-1.1.24.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/notify.js"></script>
-    <script type="text/javascript" src="../lib/freepano/js/watch-1.3.0.js"></script>
-    <script type="text/javascript" src="../lib/freepano/js/three.js/three.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/watch-1.3.0.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/three-r68.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.controls.js"></script>
     <script type="text/javascript">
@@ -237,7 +237,7 @@ $path = $set->auth ? 'restricted' : 'tiles';
                 <div><img src="img/scroll.png" alt="" width="18" /></div>
             </div>
             <div class="logo attribution">
-                <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
+                <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/example/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
                 <div class="cc-by-sa">
                     <img src="img/cc.large.png" width="16" alt="CC" />
                     <img src="img/by.large.png" width="16" alt="BY" />

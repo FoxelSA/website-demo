@@ -267,16 +267,19 @@ $(document).ready(function() {
             alpha: false
         },
 
-        sphere: {
-            texture: {
-                dirName: cfg.path,
-                baseName: cfg.src,
+        list: {
+            images: {},
+            defaults: {
                 columns: 16,
-                rows: 8
+                rows: 8,
+                dirName: cfg.path
             }
         }
 
     };
+
+    // current image
+    options.list.images[cfg.src] = {};
 
     // override options
     $.extend(options,cfg.override);
