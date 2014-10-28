@@ -2,6 +2,72 @@
     "config": {
         "sets": [
             {
+                "name": "Hôtel de la Paix",
+                "path": "hoteldelapaix",
+                "views": [
+                    {
+                        "caption": "Lobby",
+                        "src": "result_1412929016_806473-0-25-1",
+                        "override": {
+                            "lat": 10,
+                            "rotation": {
+                                "heading": 0
+                            }
+                        }
+                    },
+                    {
+                        "caption": "1st Floor",
+                        "src": "result_1412930262_997183-0-25-1",
+                        "override": {
+                            "lat": 20,
+                            "rotation": {
+                                "heading": -8
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Grace Kelly Suite - Living Room",
+                        "src": "result_1412931976_876583",
+                        "override": {
+                            "lat": 20,
+                            "rotation": {
+                                "heading": 160
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Grace Kelly Suite - Living Room",
+                        "src": "result_1412931333_906494",
+                        "override": {
+                            "lat": 25,
+                            "rotation": {
+                                "heading": 180
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Grace Kelly Suite - Bedroom",
+                        "src": "result_1412933773_704599",
+                        "override": {
+                            "lat": 20,
+                            "rotation": {
+                                "heading": 180
+                            }
+                        }
+                    },
+                    {
+                        "caption": "View of Lac Leman (Lake Geneva)",
+                        "src": "result_1407604104_385783-0-25-1",
+                        "override": {
+                            "rotation": {
+                                "heading": -75
+                            }
+                        }
+                    }
+                ],
+                "content": true
+            },
+            {
                 "name": "Geneva Festival 2014",
                 "path": "fetesdegeneve2014",
                 "views": [
