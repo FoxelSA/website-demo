@@ -390,35 +390,6 @@
                 ]
             },
             {
-                "name": "Jungfraujoch",
-                "path": "jungfraujoch",
-                "views": [
-                    {
-                        "caption": "Top of Europe, Swiss Alps",
-                        "src": "result_1392212267_208103-0-25-1",
-                        "override": {
-                            "rotation": {
-                                "heading": 0,
-                                "roll": -7.5,
-                                "tilt": -2.5
-                            }
-                        }
-                    },
-                    {
-                        "caption": "Top of Europe, Swiss Alps",
-                        "src": "result_1392212156_208103-0-25-1",
-                        "override": {
-                            "lat": 10,
-                            "rotation": {
-                                "heading": -80,
-                                "roll": -18,
-                                "tilt": -7.5
-                            }
-                        }
-                    }
-                ]
-            },
-            {
                 "name": "Musée Clin d'Ailes",
                 "path": "clindailes",
                 "views": [
@@ -485,7 +456,36 @@
                 ]
             },
             {
-                "name": "Acid'Days 2014",
+                "name": "Jungfraujoch",
+                "path": "jungfraujoch",
+                "views": [
+                    {
+                        "caption": "Top of Europe, Swiss Alps",
+                        "src": "result_1392212267_208103-0-25-1",
+                        "override": {
+                            "rotation": {
+                                "heading": 0,
+                                "roll": -7.5,
+                                "tilt": -2.5
+                            }
+                        }
+                    },
+                    {
+                        "caption": "Top of Europe, Swiss Alps",
+                        "src": "result_1392212156_208103-0-25-1",
+                        "override": {
+                            "lat": 10,
+                            "rotation": {
+                                "heading": -80,
+                                "roll": -18,
+                                "tilt": -7.5
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Motorcycle Run",
                 "path": "aciddays2014",
                 "views": [
                     {
