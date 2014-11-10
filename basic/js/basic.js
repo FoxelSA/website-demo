@@ -310,6 +310,30 @@ $(document).ready(function() {
                 rows: 8,
                 dirName: cfg.path
             }
+        },
+
+        postProcessing: {
+            enabled: false,
+            edge: {
+                shader: THREE.EdgeShader,
+                enabled: false,
+                uniforms: {
+                    aspect: function(panorama) {
+                        this.value.x=$(panorama.container).width();
+                        this.value.y=$(panorama.container).height();
+                    }
+                }
+            },
+            edge2: {
+                shader: THREE.EdgeShader2,
+                enabled: false,
+                uniforms: {
+                    aspect: function(panorama) {
+                        this.value.x=$(panorama.container).width();
+                        this.value.y=$(panorama.container).height();
+                    }
+                }
+            }
         }
 
     };
@@ -329,7 +353,16 @@ $(document).ready(function() {
             case 32:
                 console.log('lon ['+panorama.lon+'] lat ['+panorama.lat+'] tilt ['+panorama.rotation.tilt+'] roll ['+panorama.rotation.roll+']');
                 break;
+            case 49:
+                panorama.postProcessing.edge.pass.enabled = !panorama.postProcessing.edge.pass.enabled;
+                panorama.drawScene();
+                break;
+            case 50:
+                panorama.postProcessing.edge2.pass.enabled = !panorama.postProcessing.edge2.pass.enabled;
+                panorama.drawScene();
+                break;
         }
+        panorama.postProcessing.enabled = panorama.postProcessing.edge.pass.enabled || panorama.postProcessing.edge2.pass.enabled;
     });
 
 });

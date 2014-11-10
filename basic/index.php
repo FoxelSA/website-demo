@@ -151,6 +151,13 @@ $path = $set->auth ? 'restricted' : 'tiles';
     <script type="text/javascript" src="../lib/freepano/js/notify.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/watch-1.3.0.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/three-r68.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/postprocessing/EffectComposer.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/postprocessing/MaskPass.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/postprocessing/RenderPass.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/postprocessing/ShaderPass.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/shaders/CopyShader.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/shaders/EdgeShader.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/shaders/EdgeShader2.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.controls.js"></script>
     <script type="text/javascript">
