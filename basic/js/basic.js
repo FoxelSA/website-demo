@@ -78,14 +78,26 @@ $(document).ready(function() {
             }
         });
 
-        // navigation open by default
-        _navigation_open();
-
-        // navigation close automatically after 5 seconds if no interaction
+        // wait a bit for the scrollbar to init...
         setTimeout(function() {
-            if (!navInteraction)
-                _navigation_close();
-        },5000);
+
+            if ($('#nav img.active').length == 0)
+                return;
+
+            // scroll to active image
+            var pos = $('#nav img.active').position().left-50;
+            $('#nav .scrollable').mCustomScrollbar('scrollTo',(pos<0?0:pos));
+
+            // navigation open by default
+            _navigation_open();
+
+            // navigation close automatically after 5 seconds if no interaction
+            setTimeout(function() {
+                if (!navInteraction)
+                    _navigation_close();
+            },5000);
+
+        },2000);
 
     };
 
@@ -95,7 +107,7 @@ $(document).ready(function() {
     var _isPanoMoving = function() {
         if (panorama == null)
             return false;
-        return !(panorama.mode.mousedown=='undefined' || !panorama.mode.mousedown);
+        return !(panorama.mode.mousedown==undefined || !panorama.mode.mousedown);
     };
 
     /**
@@ -187,9 +199,14 @@ $(document).ready(function() {
      */
     $('footer').on('mouseenter',function() {
 
-        if (_isPanoMoving())
+        if (_isPanoMoving() || panorama===undefined)
             return;
 
+        // map
+        if (panorama.map.active)
+            panorama.map.hide(panorama.map);
+
+        // move
         var morePosition = $('footer .more').position().top;
         var footerTargetHeight = $('footer .more').outerHeight(true) + morePosition;
 
@@ -211,7 +228,7 @@ $(document).ready(function() {
      */
     $('footer').on('mouseleave',function() {
 
-        if (_isPanoMoving())
+        if (_isPanoMoving() || panorama===undefined)
             return;
 
         $('footer .shade').stop(true,false).animate({
@@ -220,7 +237,10 @@ $(document).ready(function() {
 
         $('footer .main').stop(true,false).animate({
             height: footerStartHeight
-        },400,'easeOutQuart');
+        },400,'easeOutQuart',function() {
+            if (panorama.map.active)
+                panorama.map.show(panorama.map);
+        });
 
         $('footer .logo.attribution').stop(true,false).delay(250).fadeIn(250);
         $('footer .caption').stop(true,false).delay(250).fadeIn(250);
@@ -252,6 +272,13 @@ $(document).ready(function() {
 
     // arrow
     _arrow();
+
+    // images paths
+    if (cfg.images!==undefined) {
+        $.each(cfg.images,function(i,image) {
+            $.extend(image,{dirName:cfg.dir+'/'+image.pid});
+        });
+    }
 
     // options
     var options = {
@@ -297,6 +324,10 @@ $(document).ready(function() {
             }
         },
 
+        map: {
+            active: true
+        },
+
         renderer: {
             precision: 'lowp',
             antialias: false,
@@ -304,11 +335,11 @@ $(document).ready(function() {
         },
 
         list: {
-            images: {},
+            images: cfg.images,
+            initialImage: cfg.initial,
             defaults: {
                 columns: 16,
-                rows: 8,
-                dirName: cfg.path
+                rows: 8
             }
         },
 
@@ -338,16 +369,32 @@ $(document).ready(function() {
 
     };
 
-    // current image
-    options.list.images[cfg.src] = {};
-
-    // override options
-    $.extend(options,cfg.override);
-
     // freepano
     $('#pano').panorama(options);
     panorama = $('#pano').data('pano');
 
+    if (panorama===undefined)
+        return;
+
+    // freepano map markerclick
+    $(panorama.map).bind('markerclick',function(e,data) {
+
+        if (!data.changed)
+            return;
+
+        // change active image
+        var dataset = $('#nav img.active').parents('.dataset').first();
+        $('#nav img.active').removeClass('active');
+        var image = $(dataset.children('.pano').get(parseInt(panorama.list.images[data.target].pid,10))).find('img').first();
+        image.addClass('active');
+
+        // scroll to
+        var pos = image.position().left-50;
+        $('#nav .scrollable').mCustomScrollbar('scrollTo',(pos<0?0:pos));
+
+    });
+
+    // keyboard events
     $(document).on('keypress',function(e){
         switch(e.keyCode) {
             case 32:
@@ -360,6 +407,10 @@ $(document).ready(function() {
             case 50:
                 panorama.postProcessing.edge2.pass.enabled = !panorama.postProcessing.edge2.pass.enabled;
                 panorama.drawScene();
+                break;
+            case 109:
+                if (panorama.map)
+                    panorama.map.active = !panorama.map.active;
                 break;
         }
         panorama.postProcessing.enabled = panorama.postProcessing.edge.pass.enabled || panorama.postProcessing.edge2.pass.enabled;

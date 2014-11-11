@@ -128,6 +128,16 @@ if ($set->auth && (!$set->grant || !isset($_SERVER['PHP_AUTH_USER']))) {
 // folder
 $path = $set->auth ? 'restricted' : 'tiles';
 
+// images list
+$images = array();
+foreach ($set->views as $_img) {
+    $images[$_img->src] = (object)array(
+        'pid' => $_img->pid,
+        'coords' => isset($_img->coords) ? (object)array('lat'=>(float)$_img->coords->lat,'lon'=>(float)$_img->coords->lon) : null,
+        'override' => isset($_img->override) ? $_img->override : null
+    );
+}
+
 ?>
 <head>
     <meta charset="UTF-8" />
@@ -137,6 +147,7 @@ $path = $set->auth ? 'restricted' : 'tiles';
     <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/js/thirdparty/jquery-toastmessage/css/jquery.toastmessage.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/js/thirdparty/leaflet/leaflet.css" />
     <link rel="stylesheet" type="text/css" media="all" href="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar.css" />
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/example/css/main.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/basic.css" />
@@ -150,7 +161,8 @@ $path = $set->auth ? 'restricted' : 'tiles';
     <script type="text/javascript" src="js/howler-1.1.24.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/notify.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/watch-1.3.0.js"></script>
-    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/three-r68.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/leaflet/leaflet-0.7.3.min.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/three-r69.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/postprocessing/EffectComposer.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/postprocessing/MaskPass.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/postprocessing/RenderPass.js"></script>
@@ -160,12 +172,13 @@ $path = $set->auth ? 'restricted' : 'tiles';
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/three.js/shaders/EdgeShader2.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.controls.js"></script>
+    <script type="text/javascript" src="../lib/freepano/js/jquery.freepano.map.js"></script>
     <script type="text/javascript">
         <?php if (!$cancel && $exists): ?>
             var cfg = {
-                path: '<?php print $path.'/'.$set->path.'/'.$pano->pid; ?>',
-                src: '<?php print $pano->src; ?>',
-                override: <?php print (isset($pano->override)?json_encode($pano->override):'{}'); ?>
+                dir: '<?php print ($path.'/'.$set->path); ?>',
+                initial: '<?php print ($pano->src); ?>',
+                images: <?php print (json_encode((object)$images)); ?>
             };
             <?php if (isset($pano->music)): ?>
                 var sound = new Howl({
@@ -175,6 +188,8 @@ $path = $set->auth ? 'restricted' : 'tiles';
                     loop: true
                 }).play();
             <?php endif; ?>
+        <?php else: ?>
+            var cfg = {};
         <?php endif; ?>
     </script>
     <script type="text/javascript" src="js/basic.js"></script>
@@ -301,7 +316,7 @@ $path = $set->auth ? 'restricted' : 'tiles';
     <footer>
         <div class="main">
             <div class="logo attribution">
-                <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
+                <a href="http://foxel.ch/" target="_blank"><img src="../lib/freepano/example/img/foxel.png" alt="FOXEL" width="71" height="18" /></a>
             </div>
         </div>
     </footer>

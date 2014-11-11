@@ -13,6 +13,10 @@
                             "rotation": {
                                 "heading": 0
                             }
+                        },
+                        "coords": {
+                            "lat": 46.20776,
+                            "lon": 6.14836
                         }
                     },
                     {
@@ -23,6 +27,10 @@
                             "rotation": {
                                 "heading": -8
                             }
+                        },
+                        "coords": {
+                            "lat": 46.20780,
+                            "lon": 6.14830
                         }
                     },
                     {
@@ -33,6 +41,10 @@
                             "rotation": {
                                 "heading": 160
                             }
+                        },
+                        "coords": {
+                            "lat": 46.20796,
+                            "lon": 6.14860
                         }
                     },
                     {
@@ -43,6 +55,10 @@
                             "rotation": {
                                 "heading": 180
                             }
+                        },
+                        "coords": {
+                            "lat": 46.20796,
+                            "lon": 6.14865
                         }
                     },
                     {
@@ -53,6 +69,10 @@
                             "rotation": {
                                 "heading": 180
                             }
+                        },
+                        "coords": {
+                            "lat": 46.20800,
+                            "lon": 6.14854
                         }
                     },
                     {
@@ -61,7 +81,16 @@
                         "override": {
                             "rotation": {
                                 "heading": -75
+                            },
+                            "limits": {
+                                "lat": {
+                                    "max": 35
+                                }
                             }
+                        },
+                        "coords": {
+                            "lat": 46.20782,
+                            "lon": 6.14835
                         }
                     }
                 ],
