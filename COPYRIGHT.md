@@ -37,12 +37,12 @@ This program includes works distributed under the terms of the GNU General
 Public License and/or a compatible license and other copyright notices.
 
 
-*   __howler.js 1.1.24__<br />
+*   __howler.js 1.1.25__<br />
     <[http://howlerjs.com/](http://howlerjs.com/)><br />
     Copyright (c) 2013-2014 James Simpson of GoldFire Studios, goldfirestudios.com<br />
     howler.js is licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
-*   __Malihu jQuery Custom Scrollbar Plugin 3.0.2__<br />
+*   __Malihu jQuery Custom Scrollbar Plugin 3.0.5__<br />
     <[http://manos.malihu.gr/jquery-custom-content-scroller/](http://manos.malihu.gr/jquery-custom-content-scroller/)><br />
     Copyright (c) 2014 Manos Malihutsakis, http://manos.malihu.gr<br />
     Malihu jQuery Custom Scrollbar Plugin is licensed under the [MIT license](http://opensource.org/licenses/MIT).

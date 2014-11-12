@@ -75,29 +75,31 @@ $(document).ready(function() {
             theme: 'light-thin',
             advanced: {
                 updateOnContentResize: true
+            },
+            callbacks: {
+                onInit: function() {
+                    // wait a bit...
+                    setTimeout(function() {
+
+                        if ($('#nav img.active').length == 0)
+                            return;
+
+                        // scroll to active image
+                        var pos = $('#nav img.active').position().left-50;
+                        $('#nav .scrollable').mCustomScrollbar('scrollTo',(pos<0?0:pos));
+
+                        // navigation open by default
+                        _navigation_open();
+
+                        // navigation close automatically after 5 seconds if no interaction
+                        setTimeout(function() {
+                            if (!navInteraction)
+                                _navigation_close();
+                        },5000);
+                    },2000);
+                }
             }
         });
-
-        // wait a bit for the scrollbar to init...
-        setTimeout(function() {
-
-            if ($('#nav img.active').length == 0)
-                return;
-
-            // scroll to active image
-            var pos = $('#nav img.active').position().left-50;
-            $('#nav .scrollable').mCustomScrollbar('scrollTo',(pos<0?0:pos));
-
-            // navigation open by default
-            _navigation_open();
-
-            // navigation close automatically after 5 seconds if no interaction
-            setTimeout(function() {
-                if (!navInteraction)
-                    _navigation_close();
-            },5000);
-
-        },2000);
 
     };
 

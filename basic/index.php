@@ -148,7 +148,7 @@ foreach ($set->views as $_img) {
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/js/thirdparty/jquery-toastmessage/css/jquery.toastmessage.css" />
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/js/thirdparty/leaflet/leaflet.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="js/thirdparty/jquery.mCustomScrollbar/jquery.mCustomScrollbar.css" />
     <link rel="stylesheet" type="text/css" media="all" href="../lib/freepano/example/css/main.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/basic.css" />
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/jquery-2.1.1.min.js"></script>
@@ -156,9 +156,9 @@ foreach ($set->views as $_img) {
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/jquery-toastmessage/jquery.toastmessage.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/jquery.easing-1.3.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/jquery.browser-0.0.6.min.js"></script>
-    <script type="text/javascript" src="js/jquery.mCustomScrollbar/jquery.mCustomScrollbar-3.0.2.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/jquery.mCustomScrollbar/jquery.mCustomScrollbar-3.0.5.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/hammer.js/hammer-2.0.4.min.js"></script>
-    <script type="text/javascript" src="js/howler-1.1.24.min.js"></script>
+    <script type="text/javascript" src="js/thirdparty/howler-1.1.25.min.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/notify.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/watch-1.3.0.js"></script>
     <script type="text/javascript" src="../lib/freepano/js/thirdparty/leaflet/leaflet-0.7.3.min.js"></script>
