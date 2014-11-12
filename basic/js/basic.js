@@ -64,12 +64,19 @@ $(document).ready(function() {
      */
     var _scrollbar = function() {
 
-        var _w = 0;
+        // autosize
+        var _wd = 0;
         $.each($('#nav .dataset'),function(index,el) {
-            _w += $(el).outerWidth(true);
+            var _wp = 0;
+            $.each($(el).children('.pano'),function(ind,pan) {
+                _wp += $(pan).outerWidth(true);
+            });
+            $(el).width(_wp);
+            _wd += $(el).outerWidth(true);
         });
-        $('#nav .area').width(_w+10);
+        $('#nav .area').width(_wd);
 
+        // scrollbar
         $('#nav .scrollable').mCustomScrollbar({
             axis: 'x',
             theme: 'light-thin',
