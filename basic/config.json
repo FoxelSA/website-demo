@@ -177,6 +177,10 @@
                                     "max": 15
                                 }
                             }
+                        },
+                        "coords": {
+                            "lat": 46.205615,
+                            "lon": 6.145312
                         }
                     },
                     {
@@ -193,6 +197,10 @@
                                     "max": 15
                                 }
                             }
+                        },
+                        "coords": {
+                            "lat": 46.205427,
+                            "lon": 6.14533
                         }
                     },
                     {
@@ -210,6 +218,10 @@
                                     "max": 25
                                 }
                             }
+                        },
+                        "coords": {
+                            "lat": 46.20578,
+                            "lon": 6.145175
                         }
                     },
                     {
@@ -227,6 +239,10 @@
                                     "max": 30
                                 }
                             }
+                        },
+                        "coords": {
+                            "lat": 46.20574,
+                            "lon": 6.145542
                         }
                     },
                     {
@@ -243,6 +259,10 @@
                                     "max": 30
                                 }
                             }
+                        },
+                        "coords": {
+                            "lat": 46.205723,
+                            "lon": 6.145328
                         }
                     },
                     {
@@ -260,6 +280,10 @@
                                     "max": 25
                                 }
                             }
+                        },
+                        "coords": {
+                            "lat": 46.205592,
+                            "lon": 6.145265
                         }
                     }
                 ],
@@ -283,6 +307,10 @@
                                     "max": 25
                                 }
                             }
+                        },
+                        "coords": {
+                            "lat": 46.200088,
+                            "lon": 6.145988
                         }
                     },
                     {
@@ -299,6 +327,10 @@
                                     "max": 25
                                 }
                             }
+                        },
+                        "coords": {
+                            "lat": 46.200142,
+                            "lon": 6.145882
                         }
                     },
                     {
@@ -308,6 +340,10 @@
                             "rotation": {
                                 "heading": 205
                             }
+                        },
+                        "coords": {
+                            "lat": 46.201418,
+                            "lon": 6.14363
                         }
                     },
                     {
@@ -317,6 +353,10 @@
                             "rotation": {
                                 "heading": 135
                             }
+                        },
+                        "coords": {
+                            "lat": 46.201328,
+                            "lon": 6.143337
                         }
                     }
                 ]
@@ -327,7 +367,11 @@
                 "views": [
                     {
                         "caption": "Port Marianne",
-                        "src": "result_1403179670_724762-0-25-1"
+                        "src": "result_1403179670_724762-0-25-1",
+                        "coords": {
+                            "lat": 43.600325,
+                            "lon": 3.901682
+                        }
                     },
                     {
                         "caption": "Place Ernest Granier",
@@ -336,6 +380,10 @@
                             "rotation": {
                                 "heading": 110
                             }
+                        },
+                        "coords": {
+                            "lat": 43.602138,
+                            "lon": 3.900492
                         }
                     },
                     {
@@ -353,6 +401,10 @@
                                 }
                             }
                         },
+                        "coords": {
+                            "lat": 43.610197,
+                            "lon": 3.8829
+                        },
                         "order": -1
                     },
                     {
@@ -369,6 +421,10 @@
                                     "max": 20
                                 }
                             }
+                        },
+                        "coords": {
+                            "lat": 43.6085,
+                            "lon": 3.879683
                         },
                         "order": -2
                     }
@@ -392,6 +448,10 @@
                                 }
                             }
                         },
+                        "coords": {
+                            "lat": 43.631642,
+                            "lon": 3.861803
+                        },
                         "music": "world-geeks_eoghan-osullivans-remixed-by-sakrecoer.mp3",
                         "notices": [
                             "Music: World Geeks by Eoghan O'Sullivan's, remixed by <a href=\"http://sakrecoer.com/\" target=\"_blank\">Sakrecoer</a>, released under CC BY-SA"
@@ -411,6 +471,10 @@
                                 }
                             }
                         },
+                        "coords": {
+                            "lat": 43.610653,
+                            "lon": 3.88135
+                        },
                         "music": "world-geeks_eoghan-osullivans-remixed-by-sakrecoer.mp3",
                         "notices": [
                             "Music: World Geeks by Eoghan O'Sullivan's, remixed by <a href=\"http://sakrecoer.com/\" target=\"_blank\">Sakrecoer</a>, released under CC BY-SA"
@@ -429,6 +493,10 @@
                             "rotation": {
                                 "heading": -90
                             }
+                        },
+                        "coords": {
+                            "lat": 46.84604,
+                            "lon": 6.91614
                         }
                     },
                     {
@@ -438,6 +506,10 @@
                             "rotation": {
                                 "heading": -90
                             }
+                        },
+                        "coords": {
+                            "lat": 46.84609,
+                            "lon": 6.91604
                         }
                     },
                     {
@@ -447,6 +519,10 @@
                             "rotation": {
                                 "heading": -90
                             }
+                        },
+                        "coords": {
+                            "lat": 46.84597,
+                            "lon": 6.91612
                         }
                     }
                 ]
@@ -462,6 +538,10 @@
                             "rotation": {
                                 "heading": 50
                             }
+                        },
+                        "coords": {
+                            "lat": 46.19471,
+                            "lon": 6.14069
                         }
                     },
                     {
@@ -471,6 +551,10 @@
                             "rotation": {
                                 "heading": 86
                             }
+                        },
+                        "coords": {
+                            "lat": 46.19497,
+                            "lon": 6.13996
                         }
                     },
                     {
@@ -480,6 +564,10 @@
                             "rotation": {
                                 "heading": 178
                             }
+                        },
+                        "coords": {
+                            "lat": 46.19513,
+                            "lon": 6.13963
                         }
                     }
                 ]
@@ -497,6 +585,10 @@
                                 "roll": -7.5,
                                 "tilt": -2.5
                             }
+                        },
+                        "coords": {
+                            "lat": 46.547633,
+                            "lon": 7.980903
                         }
                     },
                     {
@@ -509,6 +601,10 @@
                                 "roll": -18,
                                 "tilt": -7.5
                             }
+                        },
+                        "coords": {
+                            "lat": 46.547637,
+                            "lon": 7.98147
                         }
                     }
                 ]
@@ -526,6 +622,10 @@
                                 "roll": 10,
                                 "tilt": 10
                             }
+                        },
+                        "coords": {
+                            "lat": 46.661003,
+                            "lon": 6.701042
                         }
                     },
                     {
@@ -536,6 +636,10 @@
                                 "heading": -110,
                                 "roll": 20
                             }
+                        },
+                        "coords": {
+                            "lat": 46.66875,
+                            "lon": 6.69634
                         }
                     }
                 ]
@@ -551,6 +655,10 @@
                             "rotation": {
                                 "heading": 70
                             }
+                        },
+                        "coords": {
+                            "lat": 47.013493,
+                            "lon": 7.004895
                         }
                     },
                     {
@@ -560,6 +668,10 @@
                             "rotation": {
                                 "heading": 60
                             }
+                        },
+                        "coords": {
+                            "lat": 47.01312,
+                            "lon": 6.997092
                         }
                     }
                 ]
