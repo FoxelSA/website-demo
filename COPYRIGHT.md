@@ -4,7 +4,7 @@
 Demo Website of FOXEL SA, Geneva Switzerland.<br />
 This program is part of the FOXEL project <[http://foxel.ch](http://foxel.ch)>.
 
-Copyright (c) 2014 FOXEL SA - [http://foxel.ch](http://foxel.ch)<br />
+Copyright (c) 2014-2015 FOXEL SA - [http://foxel.ch](http://foxel.ch)<br />
 Please read <[http://foxel.ch/license](http://foxel.ch/license)> for more
 information.
 
@@ -46,3 +46,8 @@ Public License and/or a compatible license and other copyright notices.
     <[http://manos.malihu.gr/jquery-custom-content-scroller/](http://manos.malihu.gr/jquery-custom-content-scroller/)><br />
     Copyright (c) 2014 Manos Malihutsakis, http://manos.malihu.gr<br />
     Malihu jQuery Custom Scrollbar Plugin is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+*   __Potree 1.0RC__<br />
+    <[http://potree.org/](http://potree.org/)><br />
+    Copyright (c) 2011-2014, Markus Schütz<br />
+    Potree is licensed under the [BSD 2-Clause license](http://opensource.org/licenses/BSD-2-Clause).
