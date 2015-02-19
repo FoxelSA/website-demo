@@ -4,3 +4,6 @@
 [submodule "lib/dreamsofmouron"]
 	path = lib/dreamsofmouron
 	url = https://github.com/FoxelSA/dreamsofmouron.git
+[submodule "lib/potree"]
+	path = lib/potree
+	url = https://github.com/potree/potree.git
