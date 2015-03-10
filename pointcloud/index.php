@@ -71,7 +71,7 @@ void main() {
     <script src="../libs/plasio/vendor/bluebird.js"></script>-->
     <script src="../lib/potree/libs/three.js/build/three.js"></script>
     <script src="../lib/potree/libs/other/OrbitControls.js"></script>
-    <!--<script src="../libs/other/stats.min.js"></script>-->
+    <script src="../lib/potree/libs/other/stats.min.js"></script>
     <script src="../lib/potree/libs/other/dat.gui.min.js"></script>
 
     <script src="../lib/potree/build/js/potree.js"></script>
@@ -82,11 +82,9 @@ void main() {
         <a href="http://foxel.ch/" target="_blank" style="position:relative;top:1px;outline:none;"><img width="71" height="18" alt="FOXEL" src="http://demo.foxel.ch/lib/freepano/example/img/foxel.png" /></a>
     </div>
 
-    <!--
-    <div id="lblNumVisibleNodes" class="info" style="position: absolute; left: 10px; top: 80px; width: 400px; color:white"></div>
-    <div id="lblNumVisiblePoints" class="info" style="position: absolute; left: 10px; top: 100px; width: 400px; color:white"></div>
-    <div id="lblMessage" class="info" style="position: absolute; left: 10px; bottom: 0px; width: 400px; color:white"></div>
-    -->
+    <!--<div id="lblNumVisibleNodes" class="info" style="position: absolute; left: 10px; top: 80px; width: 400px; color:white; text-transform:uppercase;"></div>-->
+    <div id="lblNumVisiblePoints" class="info" style="position: absolute; left: 15px; top: 60px; width: 300px; color:white; text-transform:uppercase;text-align:left;"></div>
+    <!--<div id="lblMessage" class="info" style="position: absolute; left: 10px; bottom: 0px; width: 400px; color:white"></div>-->
 
     <div id="tools" style="position: fixed; width: 175px; bottom: 10px; right: 10px">
 
@@ -144,7 +142,7 @@ void main() {
         var quality = "Normal";
         var isFlipYZ = false;
 
-        var showStats = false;
+        var showStats = true;
         var showBoundingBox = false;
 
         var fpControls;
@@ -182,13 +180,14 @@ void main() {
 
             // dat.gui
             gui = new dat.GUI({
-                height : 5 * 32 - 1
+                height: 5 * 32 - 1,
+                width: 350
             });
             gui.close();
 
             params = {
-                "Points(m)": pointCountTarget,
-                PointSize: pointSize,
+                "Points (x 1'000'000)": pointCountTarget,
+                "Point Size": pointSize,
                 "Opacity": opacity,
                 "SizeType" : "Fixed",
                 "show octree" : false,
@@ -200,14 +199,14 @@ void main() {
                 "BoundingBox": showBoundingBox
             };
 
-            var pPoints = gui.add(params, 'Points(m)', 0.02, 2);
-            pPoints.onChange(function(value){
-                pointCountTarget = value ;
-            });
-
-            var pPointSize = gui.add(params, 'PointSize', 0, 3);
+            var pPointSize = gui.add(params, 'Point Size', 0, 5);
             pPointSize.onChange(function(value){
                 pointSize = value;
+            });
+
+            var pPoints = gui.add(params, 'Points (x 1\'000\'000)', 0.02, 10);
+            pPoints.onChange(function(value){
+                pointCountTarget = value ;
             });
 
             var pOpacity = gui.add(params, 'Opacity', 0, 1);
@@ -306,13 +305,11 @@ void main() {
             */
 
             // stats
-            /*
             stats = new Stats();
             stats.domElement.style.position = 'absolute';
             stats.domElement.style.top = '0px';
             stats.domElement.style.margin = '5px';
-            document.body.appendChild( stats.domElement );
-            */
+            //document.body.appendChild( stats.domElement );
         }
 
         function initThree(){
@@ -481,18 +478,18 @@ void main() {
             }
 
             if(stats && showStats){
-                document.getElementById("lblNumVisibleNodes").style.display = "";
+                //document.getElementById("lblNumVisibleNodes").style.display = "";
                 document.getElementById("lblNumVisiblePoints").style.display = "";
                 stats.domElement.style.display = "";
 
                 stats.update();
 
                 if(pointcloud){
-                    document.getElementById("lblNumVisibleNodes").innerHTML = "visible nodes: " + pointcloud.numVisibleNodes;
+                    //document.getElementById("lblNumVisibleNodes").innerHTML = "visible nodes: " + pointcloud.numVisibleNodes;
                     document.getElementById("lblNumVisiblePoints").innerHTML = "visible points: " + Potree.utils.addCommas(pointcloud.numVisiblePoints);
                 }
             }else if(stats){
-                document.getElementById("lblNumVisibleNodes").style.display = "none";
+                //document.getElementById("lblNumVisibleNodes").style.display = "none";
                 document.getElementById("lblNumVisiblePoints").style.display = "none";
                 stats.domElement.style.display = "none";
             }
