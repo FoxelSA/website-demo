@@ -78,8 +78,9 @@ void main() {
     <!--<script src="../build/js/laslaz.js"></script>-->
     <script src="../lib/potree/examples/js/ProgressBar.js"></script>
 
-    <div id="header" style="position:absolute;top:0;left:0;width:100%;height:auto;padding:15px;background-color:#111;">
+    <div id="header" style="position:absolute;top:0;left:0;width:100%;height:auto;padding:15px;background-color:#111;color:#fff;font-size:11px;">
         <a href="http://foxel.ch/" target="_blank" style="position:relative;top:1px;outline:none;"><img width="71" height="18" alt="FOXEL" src="http://demo.foxel.ch/lib/freepano/example/img/foxel.png" /></a>
+        <div style="position:absolute;bottom:13px;left:110px;">Photogrammetric pointcloud aligned in CH1903+ MN95/NF02 on the basis of data from <a href="http://ge.ch/sitg/" target="_blank" style="font-style:italic;">Système d'information du territoire à Genève (SITG)</a> extracted in March 2015.</div>
     </div>
 
     <!--<div id="lblNumVisibleNodes" class="info" style="position: absolute; left: 10px; top: 80px; width: 400px; color:white; text-transform:uppercase;"></div>-->
